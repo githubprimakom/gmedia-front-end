@@ -26,12 +26,6 @@
           <li class="nav-item">
             <a href="#visi-misi" class="menunya nav-link">Visi-Misi</a>
           </li>
-          <!-- <li class="nav-item">
-						<a
-							href="#testimoni"
-							class="menunya nav-link"
-						>Testimoni</a	>
-					</li> -->
           <li class="nav-item">
             <a href="#tentang" class="menunya nav-link">Tentang</a>
           </li>
@@ -103,172 +97,38 @@
                     landing.header.sub_judul
                   }}</b>
                 </h1>
-                <!-- <p>Universitas Pembangunan Nasional (UPN) "Veteran" semula adalah suatu lembaga pendidikan tinggi yang didirikan atas prakarsa para pejuang kemerdekaan R.I dengan nama Akademi Pembangunan Nasional (APN) "Veteran" yang didirikan dikota Yogyakarta...</p> -->
                 <div v-html="landing.header.isi"></div>
-                <!-- <button class="btn btn-primary selengkapnya" style="box-shadow: -2px 4px 32px rgba(20, 97, 245, 0.2);">
-									Baca Selengkapnya
-								</button> -->
               </div>
             </div>
             <div class="col-lg-6">
-              <!-- <img class="img-fluid" src="../assets/ilustrasi/ilustrasi-landing-page-1.svg" alt=""> -->
               <img class="img-fluid" :src="landing.header.logo" alt="" />
             </div>
           </div>
         </header>
       </div>
-      <!-- <section class="tambahan">
-				<div class="card-shadow">
-					<div class="row g-0 h-100" v-if="landing">
-						<div class="col-lg-4 h-100">
-							<div class="h-100 d-flex justify-content-center align-items-center padding-card-mid">
-								<div class="frame">
-									<img src="../assets/icons/person.svg" alt="">
-								</div>
-								<div>
-									<h4>
-										{{landing.analitik.jumlah_mahasiswa}}
-										+</h4>
-									<p>Mahasiswa</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 h-100">
-							<div class="h-100 d-flex justify-content-center align-items-center padding-card-mid">
-								<div class=" middle-content-landing h-100 d-flex justify-content-center w-100 align-items-center ">
-									<div class="frame">
-										<img src="../assets/icons/school.svg" alt="">
-									</div>
-									<div>
-										<h4>
-											{{landing.analitik.jumlah_alumni}}
-											+</h4>
-										<p>Alumni</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 h-100">
-							<div class="h-100 d-flex justify-content-center align-items-center padding-card-mid">
-								<div class="frame">
-									<img src="../assets/icons/icon-fakultas.svg" alt="">
-								</div>
-								<div>
-									<h4>
-										{{landing.analitik.jumlah_fakultas}}
-									</h4>
-									<p>Fakultas</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
       <section id="visi-misi">
         <div class="row" v-if="landing">
           <div class="col-lg-6">
-            <!-- <img src="../assets/ilustrasi/ilustrasi-landing-page-2.svg" class="img-fluid" alt=""> -->
             <img :src="landing.visi_misi.gambar" class="img-fluid" alt="" />
           </div>
           <div class="col-lg-6">
             <div class="visi-misi">
-              <!-- <h3>Visi & Misi UPN <br> Veteran Yogyakarta</h3> -->
               <h3>
                 {{ landing.visi_misi.judul_visi }}
               </h3>
               <h5>Visi :</h5>
-              <div class="list-visi" v-html="landing.visi_misi.visi">
-                <!-- <li>
-									<div class="d-flex align-items-start">
-										<img src="../assets/icons/icon-checklist.svg" class="me-3" alt="">
-										<p class="m-0">
-											Menjadi Universitas Pionir Pembangunan yang dilandasi jiwa bela negara di era global.
-										</p>
-									</div>
-								</li> -->
-              </div>
+              <div class="list-visi" v-html="landing.visi_misi.visi"></div>
               <h5>Misi :</h5>
-              <div v-html="landing.visi_misi.misi" class="list-visi">
-                <!-- <li>
-									<div class="d-flex align-items-start">
-										<img src="../assets/icons/icon-checklist.svg" class="me-3" alt="">
-										<p class="m-0">
-											Menghasilkan lulusan yang berdaya saing global dan berjiwa bela negara 	melalui pembelajaran berkualitas.
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex align-items-start">
-										<img src="../assets/icons/icon-checklist.svg" class="me-3" alt="">
-										<p class="m-0">
-											Mengembangkan konsepsi ilmu pengetahuan, teknologi, sains dan kemanusiaan melalui Pengembangan Program Studi/proses belajar mengajar dan pengayaan keilmuan.
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex align-items-start">
-										<img src="../assets/icons/icon-checklist.svg" class="me-3" alt="">
-										<p class="m-0">
-											Meningkatkan kualitas penelitian melalui program terencana, terintegrasi dan berkelanjutan.
-										</p>
-									</div>
-								</li> -->
-              </div>
+              <div v-html="landing.visi_misi.misi" class="list-visi"></div>
             </div>
           </div>
         </div>
       </section>
-      <!-- <section id="testimoni" style="background: #FDFDFD;">
-				<div class="row flex-column align-items-center justify-content-center">
-					<h1 class="title-sections">Testimoni dari beberapa alumni</h1>
-					<p class="sub-head-title">
-						Berikut beberapa tanggapan dari alumni kampus UPN Veteran :
-					</p>
-				</div>
-				<div class="d-flex testimoni flex-wrap">
-					<div class=" mb-3">
-						<div class="card active">
-							<div class="card-body">
-								<div class="d-flex" style="margin-bottom: 20px;">
-									<div>
-										<img class="img-orang-card" src="../assets/gambarorang.jpg" alt="">
-									</div>
-									<div class="info-card">
-										<h4>Dave Lombardo</h4>
-										<p>Asistant Director</p>
-									</div>
-								</div>
-								<p class="description-card">“Saya sangat senang bisa belajar di kampus yang sangat luar biasa ini. Lingkungan yang nyaman dan pembelajaran yang sangat baik”.</p>
-							</div>
-						</div>
-					</div>
-					<div class=" mb-3">
-						<div class="card">
-							<div class="card-body">
-								<div class="d-flex" style="margin-bottom: 20px;">
-									<div>
-										<img class="img-orang-card" src="../assets/gambarorang.jpg" alt="">
-									</div>
-									<div class="info-card">
-										<h4>Dave Lombardo</h4>
-										<p>Asistant Director</p>
-									</div>
-								</div>
-								<p class="description-card">“Saya sangat senang bisa belajar di kampus yang sangat luar biasa ini. Lingkungan yang nyaman dan pembelajaran yang sangat baik”.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
       <section id="tentang" v-if="landing" style="background: #FDFDFD;">
         <div class="row flex-column align-items-center justify-content-center">
-          <!-- <h1 class="title-sections">Tentang UPN Veteran Yogyakarta</h1> -->
           <h1 class="title-sections">
             {{ landing.tentang.judul }}
           </h1>
-          <!-- <p class="sub-head-title">
-						Ulasan mengenai UPN Yogyakarta :
-					</p> -->
           <p class="sub-head-title">
             {{ landing.tentang.subtitle }}
           </p>
@@ -276,17 +136,14 @@
         <div class="row">
           <div class="col-lg-6 tentang-text">
             <div class="tentang">
-              <!-- <h4>Tentang UPN Veteran</h4> -->
               <h4>
                 {{ landing.tentang.title }}
               </h4>
               <div class="divider"></div>
-              <!-- <p>Universitas Pembangunan Nasional "Veteran" Yogyakarta atau biasa disingkat UPN "Veteran", merupakan salah satu Perguruan Tinggi Negeri (PTN) di Indonesia yang berlokasi di Kecamatan Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Pada saat didirikan, UPN "Veteran" Yogyakarta hanya memiliki 3 jurusan. Sekarang UPN "Veteran" Yogyakarta memiliki 5 fakultas yang terdiri dari 1 program studi untuk D-3, 21 program studi untuk S-1, 8 program studi untuk S-2, serta 1 program studi untuk S-3.</p> -->
               <p v-html="landing.tentang.isi"></p>
             </div>
           </div>
           <div class="col-lg-6">
-            <!-- <img src="../assets/tentang.jpg" class="img-fluid" alt=""> -->
             <img
               v-if="
                 landing.tentang.ekstensi == 'jpg' ||
@@ -312,7 +169,6 @@
               />
               Your browser does not support HTML video.
             </video>
-            <!-- <iframe :src="landing.tentang.gambar" class="video-tentang" frameborder="0"></iframe> -->
           </div>
         </div>
       </section>
@@ -322,13 +178,8 @@
             <div class="col-lg-4 menufooter">
               <div class="logo-img">
                 <a href="#" class="logo-dinsos-footer">
-                  <!-- <img
-										src="../assets/LogoPKK-BN.png"
-										alt=""
-									/> -->
                   <img width="36px" :src="landing.aplikasi.logo" alt="" />
                   <div>
-                    <!-- <h5>PKK-BN <strong>2021</strong></h5> -->
                     <h5>
                       {{ landing.aplikasi.nama }}
                     </h5>
@@ -350,16 +201,6 @@
                 </a>
               </div>
             </div>
-            <!-- <div class="col-lg-4 menufooter">
-							<div>
-								<div class="title-footer">
-									<h3>Kampus I</h3>
-								</div>
-								<p>Jl. Padjajaran, Sleman, Yogyakarta, Indonesia. 55283</p>
-								<p>(0274) 486733</p>
-								<p>info@upnyk.ac.id</p>
-							</div>
-						</div> -->
             <div
               v-for="(items, index) in landing.footer.kampus"
               :key="index"
@@ -382,16 +223,6 @@
                 </p>
               </div>
             </div>
-            <!-- <div class="col-lg-4 menufooter">
-							<div>
-								<div class="title-footer">
-									<h3>Kampus II</h3>
-								</div>
-								<p>Jl. Babarsari 2 Yogyakarta, Indonesia. 55281</p>
-								<p>(0274) 486733</p>
-								<p>info@upnyk.ac.id</p>
-							</div>
-						</div> -->
           </div>
         </div>
         <div class="foot-bot">
