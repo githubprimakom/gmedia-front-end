@@ -3,11 +3,11 @@ kind: Deployment
 metadata:
   annotations:
     field.cattle.io/creatorId: user-gxgp6
-    field.cattle.io/publicEndpoints: '[{"addresses":["10.0.0.41"],"port":30247,"protocol":"TCP","serviceName":"gmedia:gmedia-front-end-web-nodeport","allNodes":true}]'
+    field.cattle.io/publicEndpoints: '[{"addresses":["10.0.0.37"],"port":30566,"protocol":"TCP","serviceName":"gmedia:bemkm-front-end-web-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: deployment-gmedia-gmedia-front-end-web
-  name: gmedia-front-end-web
+    workload.user.cattle.io/workloadselector: deployment-gmedia-bemkm-front-end-web
+  name: bemkm-front-end-web
   namespace: gmedia
 spec:
   progressDeadlineSeconds: 600
@@ -15,7 +15,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-gmedia-gmedia-front-end-web
+      workload.user.cattle.io/workloadselector: deployment-gmedia-bemkm-front-end-web
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -24,15 +24,15 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"gmedia-front-end-web-nodeport","hostPort":0,"kind":"NodePort","name":"80tcp01","protocol":"TCP","sourcePort":0}]]'
+        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"bemkm-front-end-web-nodeport","hostPort":0,"kind":"NodePort","name":"80tcp01","protocol":"TCP","sourcePort":0}]]'
       creationTimestamp: null
       labels:
-        workload.user.cattle.io/workloadselector: deployment-gmedia-gmedia-front-end-web
+        workload.user.cattle.io/workloadselector: deployment-gmedia-bemkm-front-end-web
     spec:
       containers:
-      - image: agussang/gmedia:${CICD_EXECUTION_SEQUENCE}
+      - image: agussang/bemkm:${CICD_EXECUTION_SEQUENCE}
         imagePullPolicy: Always
-        name: gmedia-front-end-web
+        name: bemkm-front-end-web
         ports:
         - containerPort: 80
           name: 80tcp01
@@ -55,7 +55,7 @@ spec:
       terminationGracePeriodSeconds: 30
 status:
   availableReplicas: 2
-  observedGeneration: 7
+  observedGeneration: 23
   readyReplicas: 2
   replicas: 2
   updatedReplicas: 2
