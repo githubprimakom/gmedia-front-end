@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: ricosetiawan227/bemkm-front-end${CICD_EXECUTION_SEQUENCE}
+      tag: ricosetiawan227/bemkm-front-end:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
     when:
