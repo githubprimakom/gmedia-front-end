@@ -30,7 +30,7 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-gmedia-bemkm-front-end-web
     spec:
       containers:
-      - image: agussang/bemkm:${CICD_EXECUTION_SEQUENCE}
+      - image: ricosetiawan227/bemkm-front-end:${CICD_EXECUTION_SEQUENCE}
         imagePullPolicy: Always
         name: bemkm-front-end-web
         ports:
