@@ -1,0 +1,7 @@
+<template>
+  <div>
+    <div>
+       loaderio-ae74a88e547b9a25495d9e61dfa52ddd
+    </div>
+  </div>
+</template>

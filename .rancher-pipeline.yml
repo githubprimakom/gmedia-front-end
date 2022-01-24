@@ -1,0 +1,41 @@
+stages:
+- name: jadikan image
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: agussang/gmedia:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: index.docker.io
+    when:
+      branch:
+        include:
+        - master
+        - development
+  when:
+    branch:
+      include:
+      - master
+      - development
+- name: deployk8s
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+    when:
+      branch:
+        include:
+        - master
+        - development
+timeout: 60
+branch:
+  include:
+  - master
+  - development
+notification:
+  recipients:
+  - recipient: '#pesuruh'
+    notifier: c-gllwf:n-hpwzm
+  condition:
+  - Success
+  - Changed
+  - Failed
