@@ -6,19 +6,6 @@
         <div class="row">
           <div class="col-lg-4 col-md-4">
             <div class="card-shadow mb-3">
-              <div class="p-3">
-                <div class="title-content mb-2">Selamat Admin</div>
-                <div style="font-size: 18px;">Presensi terpagi hari ini</div>
-                <div class="d-flex">
-                  <div class="time-presensi mt-4 mb-3 text-primary">
-                    06.32 WIB
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4">
-            <div class="card-shadow mb-3">
               <div class="p-3" v-if="datas">
                 <div
                   style="height: 150px;"
@@ -56,59 +43,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4">
-            <div class="card-shadow mb-3">
-              <div class="p-3" v-if="datas">
-                <div
-                  style="height: 150px;"
-                  class="d-flex flex-column justify-content-between"
-                >
-                  <div class="d-flex justify-content-between">
-                    <h5 class="title-card-dash">Pemandu</h5>
-                    <h3 class="value">
-                      {{ datas.pemandu.total }}
-                    </h3>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex align-items-center">
-                      <div class="rad-icon yellow">
-                        <img src="../../assets/icons/user-yellow.svg" alt="" />
-                      </div>
-                      <div>
-                        <h3 class="value">
-                          {{ datas.pemandu.laki }}
-                        </h3>
-                        <p class="kelamin">Laki-Laki</p>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <div class="rad-icon blue">
-                        <img src="../../assets/icons/user-blue.svg" alt="" />
-                      </div>
-                      <div>
-                        <h3 class="value">
-                          {{ datas.pemandu.perempuan }}
-                        </h3>
-                        <p class="kelamin">Perempuan</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card-shadow mb-3">
-              <div class="p-3"></div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card-shadow mb-3">
-              <div class="p-3"></div>
             </div>
           </div>
         </div>

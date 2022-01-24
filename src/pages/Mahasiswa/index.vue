@@ -41,74 +41,78 @@
             <hr />
             <div class="row">
               <div class="col-md-6 mb-3">
-                <div
-                  class="card "
-                  style="border-bottom: 4px solid rgb(1, 103, 143);"
-                >
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-3 d-flex align-items-center">
-                        <img
-                          src="https://teladan.pelindo.co.id/img/elearning.png"
-                          alt=""
-                          style="margin-top: 0%;"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="col-md-9">
-                        <h4>Materi</h4>
-                        <hr />
-                        <div class="row">
-                          <div class="col-md-8">
-                            <strong><p>Materi tersedia</p></strong>
-                          </div>
-                          <div class="col-md-4 text-right">
-                            <h3>{{ materi }}</h3>
+                <router-link :to="{ name: 'Materi Mahasiswa' }">
+                  <div
+                    class="card "
+                    style="border-bottom: 4px solid rgb(1, 103, 143);"
+                  >
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-3 d-flex align-items-center">
+                          <img
+                            src="https://teladan.pelindo.co.id/img/elearning.png"
+                            alt=""
+                            style="margin-top: 0%;"
+                            class="img-fluid"
+                          />
+                        </div>
+                        <div class="col-md-9">
+                          <h4>Materi</h4>
+                          <hr />
+                          <div class="row">
+                            <div class="col-md-8">
+                              <strong><p>Materi tersedia</p></strong>
+                            </div>
+                            <div class="col-md-4 text-right">
+                              <h3>{{ materi }}</h3>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </router-link>
               </div>
               <div class="col-md-6 mb-3">
-                <div
-                  class="card"
-                  style="border-bottom: 4px solid rgb(203, 128, 58);"
-                >
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-3 d-flex align-items-center">
-                        <img
-                          src="https://teladan.pelindo.co.id/img/counseling.png"
-                          alt=""
-                          style="margin-top: 0%;"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="col-md-9">
-                        <strong><h4>Tugas</h4></strong>
-                        <hr />
-                        <div class="row">
-                          <div class="col-md-8">
-                            <strong><p>Diselesaikan</p></strong>
-                          </div>
-                          <div class="col-md-4 text-right">
-                            <h3>{{ complete }}</h3>
-                          </div>
+                <router-link :to="{ name: 'Tugas Mahasiswa' }">
+                  <div
+                    class="card"
+                    style="border-bottom: 4px solid rgb(203, 128, 58);"
+                  >
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-3 d-flex align-items-center">
+                          <img
+                            src="https://teladan.pelindo.co.id/img/counseling.png"
+                            alt=""
+                            style="margin-top: 0%;"
+                            class="img-fluid"
+                          />
                         </div>
-                        <div class="row mt-1">
-                          <div class="col-md-8">
-                            <strong><p>Belum diselesaikan</p></strong>
+                        <div class="col-md-9">
+                          <strong><h4>Tugas</h4></strong>
+                          <hr />
+                          <div class="row">
+                            <div class="col-md-8">
+                              <strong><p>Diselesaikan</p></strong>
+                            </div>
+                            <div class="col-md-4 text-right">
+                              <h3>{{ complete }}</h3>
+                            </div>
                           </div>
-                          <div class="col-md-4 text-right">
-                            <h3>{{ incomplete }}</h3>
+                          <div class="row mt-1">
+                            <div class="col-md-8">
+                              <strong><p>Belum diselesaikan</p></strong>
+                            </div>
+                            <div class="col-md-4 text-right">
+                              <h3>{{ incomplete }}</h3>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </router-link>
               </div>
             </div>
           </div>

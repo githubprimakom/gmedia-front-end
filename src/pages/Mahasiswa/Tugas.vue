@@ -19,6 +19,7 @@
                   <table class="table">
                     <thead>
                       <tr>
+                        <th scope="col">NO</th>
                         <th scope="col">JUDUL</th>
                         <th scope="col">DEADLINE</th>
                         <th scope="col">WAKTU KIRIM</th>
@@ -33,6 +34,9 @@
                         v-for="(item, id) in dataTugas.data"
                         :key="id"
                       >
+                        <td>
+                          {{ id + 1 }}
+                        </td>
                         <td>
                           <p class="text-td">
                             {{ item.tugas.nama }}
