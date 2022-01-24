@@ -421,7 +421,7 @@
           <div class="modal-body modal-login">
             <div class="judul-modal-login">
               <h3>Login</h3>
-              <p>Masukkan Nim dan Password</p>
+              <p>Masukkan Username dan Password</p>
             </div>
             <form action="" @submit.prevent="logins">
               <div class="row position-relative">
@@ -440,8 +440,7 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label for="nim"
-                      >Nomor Induk Mahasiswa
-                      <span class="text-info">*</span></label
+                      >Username <span class="text-info">*</span></label
                     >
                     <div class="position-relative">
                       <img
