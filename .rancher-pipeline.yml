@@ -34,7 +34,7 @@ branch:
 notification:
   recipients:
   - recipient: '#pesuruh'
-    notifier: c-gllwf:n-hpwzm
+    notifier: c-h6lsd:n-x92fw
   condition:
   - Success
   - Changed
