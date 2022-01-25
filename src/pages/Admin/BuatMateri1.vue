@@ -88,7 +88,10 @@
                   </div>
                   <div class="col-6">
                     <div class="mb-3">
-                      <label for="bobot">Upload File</label>
+                      <label for="bobot"
+                        >Upload File
+                        <span class="text-danger small">*mp4/pdf</span></label
+                      >
                       <input
                         type="file"
                         id="file"
@@ -211,10 +214,26 @@ export default {
       reader.readAsDataURL(selector);
     },
     cekUploadFile() {
-      if (document.getElementById("file").files[0]) {
-        this.uploadFile(document.getElementById("file").files[0]);
+      if (
+        !["mp4", "pdf"].includes(
+          document
+            .getElementById("file")
+            .value.split(".")
+            .pop()
+        )
+      ) {
+        Swal.fire({
+          icon: "warning",
+          title: "Format file salah",
+          text: "Format file yang diijinkan hanya mp4 dan pdf",
+        });
+        return;
       } else {
-        this.form.file = null;
+        if (document.getElementById("file").files[0]) {
+          this.uploadFile(document.getElementById("file").files[0]);
+        } else {
+          this.form.file = null;
+        }
       }
     },
     uploadFile(selector) {
