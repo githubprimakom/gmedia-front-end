@@ -31,7 +31,7 @@
               </div>
               <div
                 :class="
-                  `px-3 py-2 ${
+                  `me-2 px-3 py-2 ${
                     countMahasiswa == dataTugas.data.length
                       ? 'primary text-primary'
                       : 'danger text-danger'
@@ -47,6 +47,24 @@
                       dataTugas.data.length +
                       " telah dinilai"
                 }}
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-4">
+                <select
+                  class="form-select"
+                  aria-label="Filter"
+                  name="filter"
+                  v-model="filter"
+                  @change="selectFilter($event)"
+                >
+                  <option value="" selected>Filter</option>
+                  <option value="1">Sudah dinilai</option>
+                  <option value="2">Belum dinilai</option>
+                  <option value="3">Sudah dikerjakan</option>
+                  <option value="4">Belum dikerjakan</option>
+                </select>
               </div>
             </div>
           </div>
@@ -554,11 +572,161 @@ export default {
       dataLetter: [],
       total: [],
       countMahasiswa: 0,
+      filter: "",
     };
   },
   methods: {
     formatDate(date) {
       return moment(date).format("DD MMM YYYY");
+    },
+    selectFilter(e) {
+      const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+      this.dataLetter = alphabet;
+      var countEditor = 0;
+      this.filter = e.target.value;
+      if (this.filter != "") {
+        axios
+          .get(
+            this.url +
+              "tugas/superadmin/tugas/pengerjaan/" +
+              this.$route.params.id_gugus +
+              "/" +
+              this.$route.params.id_tugas +
+              "?filter=" +
+              this.filter,
+            {
+              headers: {
+                Authorization: localStorage.token,
+              },
+            }
+          )
+          .then((res) => {
+            this.dataTugas = res.data;
+            var data = this.dataTugas.data;
+            var arrNilai = [];
+            var count = 0;
+
+            for (let k = 0; k < data.length; k++) {
+              arrNilai.push({ nilai: [], totalNilai: 0 });
+              if (data[k].dikerjakan) {
+                var arrTotal = [];
+
+                if (data[k].soal_pg.length > 0) {
+                  for (let n = 0; n < data[k].soal_pg.length; n++) {
+                    arrNilai[k].nilai.push({
+                      nilai: data[k].soal_pg[n].data_jawaban.nilai
+                        ? data[k].soal_pg[n].data_jawaban.nilai
+                        : 0,
+                      uuid: data[k].soal_pg[n].data_jawaban.uuid,
+                      benar: data[k].soal_pg[n].data_jawaban.benar,
+                      jawaban: data[k].soal_pg[n].data_jawaban.jawaban,
+                      bobot: data[k].soal_pg[n].bobot,
+                      type: "pg",
+                    });
+
+                    if (data[k].soal_pg[n].data_jawaban.nilai) {
+                      arrTotal.push(
+                        parseInt(data[k].soal_pg[n].data_jawaban.nilai)
+                      );
+                    } else {
+                      arrTotal.push(0);
+                    }
+                  }
+                }
+
+                if (data[k].soal_essai.length > 0) {
+                  for (let l = 0; l < data[k].soal_essai.length; l++) {
+                    arrNilai[k].nilai.push({
+                      nilai: data[k].soal_essai[l].data_jawaban.nilai
+                        ? data[k].soal_essai[l].data_jawaban.nilai
+                        : null,
+                      uuid: data[k].soal_essai[l].data_jawaban.uuid,
+                      benar: data[k].soal_essai[l].data_jawaban.benar,
+                      jawaban: data[k].soal_essai[l].data_jawaban.jawaban,
+                      bobot: data[k].soal_essai[l].bobot,
+                      type: "essai",
+                    });
+
+                    if (data[k].soal_essai[l].data_jawaban.nilai) {
+                      arrTotal.push(
+                        parseInt(data[k].soal_essai[l].data_jawaban.nilai)
+                      );
+                    } else {
+                      arrTotal.push(0);
+                    }
+                  }
+                }
+
+                if (data[k].soal_upload.length > 0) {
+                  for (let m = 0; m < data[k].soal_upload.length; m++) {
+                    arrNilai[k].nilai.push({
+                      nilai: data[k].soal_upload[m].data_jawaban.nilai
+                        ? data[k].soal_upload[m].data_jawaban.nilai
+                        : null,
+                      uuid: data[k].soal_upload[m].data_jawaban.uuid,
+                      benar: data[k].soal_upload[m].data_jawaban.benar,
+                      jawaban: data[k].soal_upload[m].data_jawaban.jawaban,
+                      bobot: data[k].soal_upload[m].bobot,
+                      type: "upload",
+                    });
+
+                    if (data[k].soal_upload[m].data_jawaban.nilai) {
+                      arrTotal.push(
+                        parseInt(data[k].soal_upload[m].data_jawaban.nilai)
+                      );
+                    } else {
+                      arrTotal.push(0);
+                    }
+                  }
+                }
+
+                arrNilai[k].totalNilai = arrTotal.reduce((a, b) => a + b, 0);
+              }
+
+              if (data[k].nilai) {
+                count++;
+              }
+            }
+
+            this.countMahasiswa = count;
+            this.total = arrNilai;
+
+            var editorInterval = setInterval(() => {
+              for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data[i].soal_essai.length; j++) {
+                  // eslint-disable-next-line
+                  tinymce.init({
+                    selector: `#esai${i}${j}`,
+                    menubar: false,
+                    min_height: 400,
+                    readonly: 1,
+                  });
+                }
+              }
+
+              countEditor++;
+
+              if (countEditor == 3) {
+                clearInterval(editorInterval);
+              }
+            }, 1000);
+
+            setTimeout(() => {
+              for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data[i].soal_essai.length; j++) {
+                  // eslint-disable-next-line
+                  tinyMCE
+                    .get(`esai${i}${j}`)
+                    .setContent(data[i].soal_essai[j].data_jawaban.jawaban);
+                }
+              }
+            }, 3500);
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     },
     checkBobot(id, idSoal) {
       // var data = this.total[id].totalNilai;
