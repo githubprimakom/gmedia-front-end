@@ -160,6 +160,12 @@
                     {{ formatDate(item.created_at) }}
                   </div>
                 </div>
+                <hr />
+                <div class="d-flex">
+                  <div v-for="(tag, id) in item.tags" :key="id" class="me-2">
+                    <span class="badge bg-secondary">#{{ tag }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

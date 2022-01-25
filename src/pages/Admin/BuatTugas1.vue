@@ -134,6 +134,27 @@
             </div>
           </div>
         </div>
+        <div class="card-shadow mb-3 p-3">
+          <div class="row">
+            <label>Filter <span class="text-info">*</span></label>
+            <div class="col-lg-2" v-for="(tag, id) in tags" :key="id">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  :id="id"
+                  name="selected-tag"
+                  :value="tag"
+                  v-model="selectedTags"
+                  @click="selectTag"
+                />
+                <label class="form-check-label" :for="id">
+                  {{ tag }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           class="card-shadow success text-success mb-3"
           v-if="checkSoal.length > 0"
@@ -147,10 +168,10 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-center" v-if="!dataSoal">
+        <div class="d-flex justify-content-center" v-if="tags.length < 1">
           <div class="card-shadow">
             <div class="px-5 py-3">
-              <Loader text="Sedang memuat data soal." />
+              <Loader text="Sedang memuat data tag." />
             </div>
           </div>
         </div>
@@ -243,6 +264,12 @@
                     {{ formatDate(item.created_at) }}
                   </div>
                 </div>
+                <hr />
+                <div class="d-flex">
+                  <div v-for="(tag, id) in item.tags" :key="id" class="me-2">
+                    <span class="badge bg-secondary">#{{ tag }}</span>
+                  </div>
+                </div>
               </div>
             </label>
           </div>
@@ -332,6 +359,8 @@ export default {
       dataSoal: null,
       tempSoal: null,
       checkSoal: [],
+      tags: [],
+      selectedTags: [],
     };
   },
   methods: {
@@ -376,14 +405,32 @@ export default {
           });
       }
     },
+    selectTag() {
+      setTimeout(() => {
+        this.dataSoal = null;
+        axios
+          .get(`${this.url}tugas/superadmin/soal?tags=${this.selectedTags}`, {
+            headers: {
+              Authorization: localStorage.token,
+            },
+          })
+          .then((res) => {
+            console.log(res);
+            this.dataSoal = res.data.data;
+          })
+          .catch((err) => {
+            console.log(err);
+            // localStorage.clear();
+          });
+      }, 100);
+    },
     submit() {},
   },
   mounted() {
     this.width = $(document).width();
     var countEditor = 0;
-
     axios
-      .get(this.url + "tugas/superadmin/soal", {
+      .get(`${this.url}tugas/superadmin/tag`, {
         headers: {
           Authorization: localStorage.token,
         },
@@ -391,8 +438,7 @@ export default {
       .then((res) => {
         console.log(res);
         this.setSoal = [];
-        this.dataSoal = res.data.data;
-        this.tempSoal = res.data.data.data;
+        this.tags = res.data.data;
 
         var editorInterval = setInterval(() => {
           countEditor++;
@@ -430,6 +476,18 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+
+    // axios
+    //   .get(this.url + "tugas/superadmin/soal", {
+    //     headers: {
+    //       Authorization: localStorage.token,
+    //     },
+    //   })
+    //   .then((res) => {
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   },
 };
 </script>
