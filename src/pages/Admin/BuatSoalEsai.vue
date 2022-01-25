@@ -66,6 +66,25 @@
                 </div>
               </div>
             </div>
+            <hr />
+            <div class="row">
+              <label>Pilih tag <span class="text-info">*</span></label>
+              <div class="col-lg-2" v-for="(tag, id) in tags" :key="id">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    :id="id"
+                    name="selected-tag"
+                    :value="tag"
+                    v-model="form.tags"
+                  />
+                  <label class="form-check-label" :for="id">
+                    {{ tag }}
+                  </label>
+                </div>
+              </div>
+            </div>
             <div
               class="d-flex justify-content-center justify-content-lg-end mt-5"
             >
@@ -105,11 +124,13 @@ export default {
   data: function() {
     return {
       width: null,
+      tags: [],
       form: {
         foto: null,
         tipe: "ESSAI",
         kategori: "default",
         extension: null,
+        tags: [],
       },
       validation: {
         foto: null,
@@ -168,6 +189,7 @@ export default {
               tipe: "ESSAI",
               kategori: this.form.kategori,
               extension: this.form.extension,
+              tags: this.form.tags,
             },
             {
               headers: {
@@ -194,6 +216,20 @@ export default {
     },
   },
   mounted() {
+    axios
+      .get(`${this.url}tugas/superadmin/tag`, {
+        headers: {
+          Authorization: localStorage.token,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.tags = res.data.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     this.width = $(document).width();
 
     $(document).ready(function() {
