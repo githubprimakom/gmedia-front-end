@@ -25,7 +25,20 @@
         <div class="row mb-4" v-else>
           <div class="col-lg-12">
             <div class="card-shadow">
-              <img :src="dataMateri.cover_url" class="card-img-top" alt="..." />
+              <div v-if="dataMateri.file" class="p-3">
+                <video
+                  controls
+                  v-if="['mp4'].includes(dataMateri.extension)"
+                  style="width: 100%;"
+                >
+                  <source :src="dataMateri.file_url" type="video/mp4" />
+                </video>
+                <iframe
+                  v-else
+                  :src="`${dataMateri.file_url}#toolbar=0`"
+                  style="width: 100%; height: 800px; border: none;"
+                ></iframe>
+              </div>
               <div class="card-body p-3">
                 <div class="row">
                   <div class="h5 col-2">Judul</div>
