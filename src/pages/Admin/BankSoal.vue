@@ -5,74 +5,104 @@
       <div class="section">
         <div class="card-shadow mb-5">
           <div class="p-3">
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
+            <div class="row justify-content-between align-items-center">
+              <div class="col-lg-6 col-sm-12 mb-2">
                 <div class="title-content">Bank Soal</div>
                 <div class="title-type-soal">
                   Soal
                   <span class="text-capitalize">{{ type.toLowerCase() }}</span>
                 </div>
               </div>
-              <div class="dropdown">
+              <div
+                class="col-lg-6 col-sm-12 mb-2 d-flex justify-content-end align-items-center"
+              >
                 <button
-                  class="btn btn-outline-primary dropdown-toggle"
-                  type="button"
-                  id="tipeSoal"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  class="btn btn-outline-success me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#tambahModal"
                 >
-                  Pilih Tipe Soal
+                  <i class="fas fa-plus"></i> Add tag
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="tipeSoal">
-                  <li>
-                    <div
-                      class="dropdown-item cursor-pointer d-flex align-items-center"
-                      @click="changeType('ESSAI')"
-                    >
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggle"
+                    type="button"
+                    id="tipeSoal"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Pilih Tipe Soal
+                  </button>
+                  <ul class="dropdown-menu me-2" aria-labelledby="tipeSoal">
+                    <li>
                       <div
-                        class="d-flex justify-content-center me-2"
-                        style="width: 20px;"
+                        class="dropdown-item cursor-pointer d-flex align-items-center"
+                        @click="changeType('ESSAI')"
                       >
-                        <img src="../../assets/icons/essay.svg" alt="" />
+                        <div
+                          class="d-flex justify-content-center me-2"
+                          style="width: 20px;"
+                        >
+                          <img src="../../assets/icons/essay.svg" alt="" />
+                        </div>
+                        <div>Esai</div>
                       </div>
-                      <div>Esai</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div
-                      class="dropdown-item cursor-pointer d-flex align-items-center"
-                      @click="changeType('PILIHAN GANDA')"
-                    >
+                    </li>
+                    <li>
                       <div
-                        class="d-flex justify-content-center me-2"
-                        style="width: 20px;"
+                        class="dropdown-item cursor-pointer d-flex align-items-center"
+                        @click="changeType('PILIHAN GANDA')"
                       >
-                        <img
-                          src="../../assets/icons/pilihan_ganda.svg"
-                          alt=""
-                        />
+                        <div
+                          class="d-flex justify-content-center me-2"
+                          style="width: 20px;"
+                        >
+                          <img
+                            src="../../assets/icons/pilihan_ganda.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div>Pilihan Ganda</div>
                       </div>
-                      <div>Pilihan Ganda</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div
-                      class="dropdown-item cursor-pointer d-flex align-items-center"
-                      @click="changeType('UPLOAD')"
-                    >
+                    </li>
+                    <li>
                       <div
-                        class="d-flex justify-content-center me-2"
-                        style="width: 20px;"
+                        class="dropdown-item cursor-pointer d-flex align-items-center"
+                        @click="changeType('UPLOAD')"
                       >
-                        <img
-                          src="../../assets/icons/pilihan_ganda.svg"
-                          alt=""
-                        />
+                        <div
+                          class="d-flex justify-content-center me-2"
+                          style="width: 20px;"
+                        >
+                          <img
+                            src="../../assets/icons/pilihan_ganda.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div>Upload</div>
                       </div>
-                      <div>Upload</div>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-2" v-for="(tag, id) in tags" :key="id">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    :id="id"
+                    name="selected-tag"
+                    :value="tag"
+                    v-model="selectedTags"
+                    @click="selectTag"
+                  />
+                  <label class="form-check-label" :for="id">
+                    {{ tag }}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -306,6 +336,66 @@
         <Footer />
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="tambahModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Tambah Tag
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <form action="" @submit.prevent="tambahTag">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="tag">Tag</label>
+                      <div class="check-error">
+                        <input
+                          type="text"
+                          name="name"
+                          id="tag"
+                          placeholder="Tag"
+                          class="form-control"
+                          v-model="newTag.name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 footer-modal">
+                    <div class="d-flex justify-content-end">
+                      <button
+                        class="btn btn-success"
+                        style="margin-right: 24px;"
+                        :disabled="!newTag.name"
+                      >
+                        Tambah
+                      </button>
+                      <a class="btn btn-outline-success" data-bs-dismiss="modal"
+                        >Batal</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -324,7 +414,12 @@ export default {
     return {
       width: null,
       type: "ESSAI",
+      tags: [],
       dataSoal: null,
+      newTag: {
+        name: "",
+      },
+      selectedTags: [],
     };
   },
   methods: {
@@ -350,6 +445,28 @@ export default {
           console.log(err);
           // localStorage.clear();
         });
+    },
+    selectTag() {
+      setTimeout(() => {
+        this.dataSoal = null;
+        axios
+          .get(
+            `${this.url}tugas/superadmin/soal?tipe=${this.type}&tags=${this.selectedTags}`,
+            {
+              headers: {
+                Authorization: localStorage.token,
+              },
+            }
+          )
+          .then((res) => {
+            console.log(res);
+            this.dataSoal = res.data.data;
+          })
+          .catch((err) => {
+            console.log(err);
+            // localStorage.clear();
+          });
+      }, 100);
     },
     navigation(type, url) {
       if (url) {
@@ -410,6 +527,35 @@ export default {
         }
       });
     },
+    tambahTag() {
+      axios
+        .post(`${this.url}tugas/superadmin/tag`, this.newTag, {
+          headers: {
+            Authorization: localStorage.token,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+          if (res.data.success) {
+            this.tags.unshift(this.newTag.name);
+            this.newTag.name = "";
+            $("#tambahModal").modal("toggle");
+          } else {
+            Swal.fire({
+              position: "center",
+              icon: "error",
+              title: res.data.messages,
+            });
+          }
+        })
+        .catch((err) => {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: err.response.data.message,
+          });
+        });
+    },
   },
   mounted() {
     axios
@@ -425,6 +571,19 @@ export default {
       .catch((err) => {
         console.log(err);
         // localStorage.clear();
+      });
+    axios
+      .get(`${this.url}tugas/superadmin/tag`, {
+        headers: {
+          Authorization: localStorage.token,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.tags = res.data.data;
+      })
+      .catch((err) => {
+        console.log(err);
       });
     this.width = $(document).width();
 
