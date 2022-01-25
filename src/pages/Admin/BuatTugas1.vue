@@ -136,8 +136,8 @@
         </div>
         <div class="card-shadow mb-3 p-3">
           <div class="row">
-            <label>Filter <span class="text-info">*</span></label>
-            <div class="col-lg-2" v-for="(tag, id) in tags" :key="id">
+            <label>Kategori</label>
+            <div class="col-lg-12" v-for="(tag, id) in tags" :key="id">
               <div class="form-check">
                 <input
                   class="form-check-input"
