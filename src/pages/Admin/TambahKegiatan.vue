@@ -50,10 +50,10 @@
 									</div>
 									<div class="col-lg-4">
 										<div class="form-group">
-											<label for="gugus">Gugus</label>
+											<label for="gugus">Departemen</label>
 											<div class="check-error">
 												<select v-if="dataGugus" name="gugus" id="gugus" class="form-select" v-model="jadwal.gugus_id" @change="getListTugas(jadwal.gugus_id)">
-													<option value="" disabled selected>Pilih Gugus</option>
+													<option value="" disabled selected>Pilih Departemen</option>
 													<option :value="items.uuid" v-for="(items,index) in dataGugus" :key="index">{{items.name}}</option>
 												</select>
 												<small :class="`text-danger d-flex ${validationTambah.gugus_id.status === true ? 'd-none' : 'd-flex'}`">
@@ -71,7 +71,6 @@
 													{{ validationTambah.deskripsi.message }}
 												</small>
 											</div>
-											<!-- <input type="text" v-model="jadwal.deskripsi" placeholder="Deskripsi" name="deskripsi" id="deskripsi" class="form-control"> -->
 										</div>
 									</div>
 								</div>

@@ -9,6 +9,7 @@ import NavbarMahasiswa from "./components/NavbarMahasiswa.vue"
 import Loader from "./components/Loader.vue"
 import Footer from "./components/Footer.vue"
 import Pagination from "./components/Pagination.vue"
+import NoData from "./components/NoData.vue"
 import { ObserveVisibility } from 'vue-observe-visibility'
 
 Vue.directive('observe-visibility', ObserveVisibility)
@@ -24,7 +25,7 @@ Vue.component('NavbarMahasiswa', NavbarMahasiswa)
 Vue.component('Loader', Loader)
 Vue.component('Footer', Footer)
 Vue.component('Pagination', Pagination)
-
+Vue.component('NoData', NoData)
 
 new Vue({
   router,

@@ -4,10 +4,30 @@
     <div :class="`content ${width > 992 ? '' : 'hide'}`">
       <div class="section">
         <div class="row">
-          <div class="col-lg-4 col-md-4">
+          <div class="col-lg-6 col-md-6" v-if="gugusMahasiswa.options.xaxis.categories.length > 0" id="gugusMahasiswa">
+            <div class="card-shadow mb-3">
+              <div class="card-header">
+                <div class="h5">Mahasiswa per departemen</div>
+              </div>
+              <div class="card-body">
+                <apexchart type="bar" :width="widthGugusMahasiswa" height="400" :options="gugusMahasiswa.options" :series="gugusMahasiswa.series"></apexchart>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6" v-if="gugusTugas.options.labels.length > 0" id="gugusTugas">
+            <div class="card-shadow mb-3">
+              <div class="card-header">
+                <div class="h5">Tugas per departemen</div>
+              </div>
+              <div class="card-body">
+                <apexchart type="pie" :width="widthGugusTugas" height="400" :options="gugusTugas.options" :series="gugusTugas.series"></apexchart>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
             <div class="card-shadow mb-3">
               <div class="p-3" v-if="datas">
-                <div
+                <router-link :to="{ name: 'Mahasiswa Master' }"
                   style="height: 150px;"
                   class="d-flex flex-column justify-content-between"
                 >
@@ -41,7 +61,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </router-link>
               </div>
             </div>
           </div>
@@ -65,6 +85,61 @@ export default {
     return {
       width: null,
       datas: null,
+      widthGugusMahasiswa: 100,
+      widthGugusTugas: 100,
+      gugusMahasiswa: {
+        options: {
+          stroke: {
+            curve: "smooth"
+          },
+          responsive: [
+            {
+              breakpoint: 100,
+              options: {
+                chart: {
+                  width: 25
+                },
+                legend: {
+                  position: "bottom"
+                }
+              }
+            }
+          ],
+          colors: ["#0B7517"],
+          xaxis: {
+            categories: [],
+            convertedCatToNumeric: false
+          }
+        },
+        series: [
+          {
+            name: "Jumlah staff",
+            data: [3, 3]
+          }
+        ]
+      },
+      gugusTugas: {
+        options: {
+          chart: {
+            type: "pie"
+          },
+          labels: [],
+          responsive: [
+            {
+              breakpoint: 100,
+              options: {
+                chart: {
+                  width: 25
+                },
+                legend: {
+                  position: "bottom"
+                }
+              }
+            }
+          ]
+        },
+        series: [0,9,0]
+      },
     };
   },
   mounted() {
@@ -78,6 +153,14 @@ export default {
       .then((result) => {
         if (result.data.success) {
           this.datas = result.data.data;
+          this.gugusMahasiswa.options.xaxis.categories = result.data.data.gugus;
+          this.gugusMahasiswa.series[0].data = result.data.data.mahasiswa_count;
+          this.gugusTugas.series = result.data.data.tugas_count;
+          this.gugusTugas.options.labels = result.data.data.gugus;
+          setTimeout(() => {
+            this.widthGugusMahasiswa = $('#gugusMahasiswa').width() - 32;
+            this.widthGugusTugas = $('#gugusTugas').width() - 32;
+          }, 100);
         } else if (result.message === "Unauthorize") {
           localStorage.clear();
           this.$router.push({ name: "Landing Page" });

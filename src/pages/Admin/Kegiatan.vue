@@ -14,24 +14,9 @@
 				<div class="card-shadow mb-3">
 					<div class="py-3 pe-3">
 						<Loader text="Sedang memuat data Kegiatan." v-if="!dataKegiatan" />
+						<NoData v-else-if="dataKegiatan.code == 404" />
 						<div class="row m-0" v-else>
-							<!-- <div style="width: calc(100% - 723px)" class="g-0">
-								<div style="padding: 20px">
-									<div class="card" style="height: 250px;box-shadow: -1px 2px 24px rgba(11, 19, 42, 0.08);border:none"></div>
-								</div>
-							</div> -->
 							<div style="width: 100%;" class=" g-0 border-start border-dark ps-3">
-								<!-- <div class="d-flex first-kegiatan-top">
-									<div class="d-flex button-right-left">
-										<a href="#" class="button-firstnya">
-											<img src="../../assets/icons/left.svg" alt="">
-										</a>
-										<a href="#">
-											<img src="../../assets/icons/right.svg" alt="">
-										</a>
-									</div>
-									<h4>Juli 2021</h4>
-								</div> -->
 								<div class="accordion mb-2" id="accordionExample" v-if="dataKegiatan" style="box-shadow: 0 1px 13px 0 rgb(27 27 27 / 10%);">
 									<div v-for="(items,index) in dataKegiatan.data" :key="index">
 										<div class="accordion-item shadow mb-2">
@@ -65,15 +50,6 @@
 																	<button class="btn btn-danger" @click="deleted(items.uuid, items.topik)"><i class="fa fa-trash"></i> </button>
 																</div>
 															</div>
-															<!-- <div class="col-lg-9">
-																<div class="form-group">
-																	<label for="link">Link</label>
-																	<div class="input-group mb-3">
-																		<input type="text" readonly name="link" id="link" value="https://www.youtube.com/watch?v=tjqRaS3F7xc" class="form-control">
-																		<span class="input-group-text btn btn-primary" id="basic-addon2"><img src="../../assets/icons/copy.svg" alt=""> Copy Link</span>
-																	</div>
-																</div>
-															</div> -->
 														</div>
 														<div v-if="items.aktivitas.length !== null">
 															<div v-for="(item, i) in items.aktivitas" :key="i">
