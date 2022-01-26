@@ -65,6 +65,47 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="card-shadow mb-3">
+              <div class="p-3" v-if="datas">
+                <router-link :to="{ name: 'Tugas Master' }"
+                  style="height: 150px;"
+                  class="d-flex flex-column justify-content-between"
+                >
+                  <div class="d-flex justify-content-between">
+                    <h5 class="title-card-dash">Tugas</h5>
+                    <h3 class="value">
+                      {{ datas.tugas.total }}
+                    </h3>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <div class="rad-icon red">
+                        <i class="fas fa-check text-danger"></i>
+                      </div>
+                      <div>
+                        <h3 class="value">
+                          {{ datas.tugas.selesai }}
+                        </h3>
+                        <p class="kelamin">Selesai</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="rad-icon green">
+                        <i class="far fa-clock text-success"></i>
+                      </div>
+                      <div>
+                        <h3 class="value">
+                          {{ datas.tugas.berjalan }}
+                        </h3>
+                        <p class="kelamin">Berjalan</p>
+                      </div>
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
