@@ -7,7 +7,7 @@
           <div class="col-lg-6 col-md-6" v-if="gugusMahasiswa.options.xaxis.categories.length > 0" id="gugusMahasiswa">
             <div class="card-shadow mb-3">
               <div class="card-header">
-                <div class="h5">Mahasiswa per departemen</div>
+                <div class="h5">Staff per departemen</div>
               </div>
               <div class="card-body">
                 <apexchart type="bar" :width="widthGugusMahasiswa" height="400" :options="gugusMahasiswa.options" :series="gugusMahasiswa.series"></apexchart>
@@ -109,7 +109,19 @@ export default {
           xaxis: {
             categories: [],
             convertedCatToNumeric: false
-          }
+          },
+          yaxis: {
+            labels: {
+              formatter: function(val) {
+                return val;
+              }
+            }
+          },
+          dataLabels: {
+            formatter: function (val) {
+                return `${val} Staff`
+            },
+          },
         },
         series: [
           {
@@ -136,7 +148,12 @@ export default {
                 }
               }
             }
-          ]
+          ],
+          dataLabels: {
+            formatter: function (val, opts) {
+                return `${opts.w.config.series[opts.seriesIndex]} Tugas`
+            },
+          },
         },
         series: [0,9,0]
       },
