@@ -4,30 +4,51 @@
     <div :class="`content ${width > 992 ? '' : 'hide'}`">
       <div class="section">
         <div class="row">
-          <div class="col-lg-6 col-md-6" v-if="gugusMahasiswa.options.xaxis.categories.length > 0" id="gugusMahasiswa">
+          <div
+            class="col-lg-6 col-md-6"
+            v-if="gugusMahasiswa.options.xaxis.categories.length > 0"
+            id="gugusMahasiswa"
+          >
             <div class="card-shadow mb-3">
               <div class="card-header">
                 <div class="h5">Staff per departemen</div>
               </div>
               <div class="card-body">
-                <apexchart type="bar" :width="widthGugusMahasiswa" height="400" :options="gugusMahasiswa.options" :series="gugusMahasiswa.series"></apexchart>
+                <apexchart
+                  type="bar"
+                  :width="widthGugusMahasiswa"
+                  height="400"
+                  :options="gugusMahasiswa.options"
+                  :series="gugusMahasiswa.series"
+                ></apexchart>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6" v-if="gugusTugas.options.labels.length > 0" id="gugusTugas">
+          <div
+            class="col-lg-6 col-md-6"
+            v-if="gugusTugas.options.labels.length > 0"
+            id="gugusTugas"
+          >
             <div class="card-shadow mb-3">
               <div class="card-header">
                 <div class="h5">Tugas per departemen</div>
               </div>
               <div class="card-body">
-                <apexchart type="pie" :width="widthGugusTugas" height="400" :options="gugusTugas.options" :series="gugusTugas.series"></apexchart>
+                <apexchart
+                  type="pie"
+                  :width="widthGugusTugas"
+                  height="400"
+                  :options="gugusTugas.options"
+                  :series="gugusTugas.series"
+                ></apexchart>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="card-shadow mb-3">
               <div class="p-3" v-if="datas">
-                <router-link :to="{ name: 'Mahasiswa Master' }"
+                <router-link
+                  :to="{ name: 'Mahasiswa Master' }"
                   style="height: 150px;"
                   class="d-flex flex-column justify-content-between"
                 >
@@ -68,7 +89,8 @@
           <div class="col-lg-6 col-md-6">
             <div class="card-shadow mb-3">
               <div class="p-3" v-if="datas">
-                <router-link :to="{ name: 'Tugas Master' }"
+                <router-link
+                  :to="{ name: 'Tugas Master' }"
                   style="height: 150px;"
                   class="d-flex flex-column justify-content-between"
                 >
@@ -131,50 +153,50 @@ export default {
       gugusMahasiswa: {
         options: {
           stroke: {
-            curve: "smooth"
+            curve: "smooth",
           },
           responsive: [
             {
               breakpoint: 100,
               options: {
                 chart: {
-                  width: 25
+                  width: 25,
                 },
                 legend: {
-                  position: "bottom"
-                }
-              }
-            }
+                  position: "bottom",
+                },
+              },
+            },
           ],
           colors: ["#0B7517"],
           xaxis: {
             categories: [],
-            convertedCatToNumeric: false
+            convertedCatToNumeric: false,
           },
           yaxis: {
             labels: {
               formatter: function(val) {
                 return val;
-              }
-            }
+              },
+            },
           },
           dataLabels: {
-            formatter: function (val) {
-                return `${val} Staff`
+            formatter: function(val) {
+              return `${val} Staff`;
             },
           },
         },
         series: [
           {
             name: "Jumlah staff",
-            data: [3, 3]
-          }
-        ]
+            data: [3, 3],
+          },
+        ],
       },
       gugusTugas: {
         options: {
           chart: {
-            type: "pie"
+            type: "pie",
           },
           labels: [],
           responsive: [
@@ -182,21 +204,21 @@ export default {
               breakpoint: 100,
               options: {
                 chart: {
-                  width: 25
+                  width: 25,
                 },
                 legend: {
-                  position: "bottom"
-                }
-              }
-            }
+                  position: "bottom",
+                },
+              },
+            },
           ],
           dataLabels: {
-            formatter: function (val, opts) {
-                return `${opts.w.config.series[opts.seriesIndex]} Tugas`
+            formatter: function(val, opts) {
+              return `${opts.w.config.series[opts.seriesIndex]} Tugas`;
             },
           },
         },
-        series: [0,9,0]
+        series: [0, 9, 0],
       },
     };
   },
@@ -216,8 +238,8 @@ export default {
           this.gugusTugas.series = result.data.data.tugas_count;
           this.gugusTugas.options.labels = result.data.data.gugus;
           setTimeout(() => {
-            this.widthGugusMahasiswa = $('#gugusMahasiswa').width() - 32;
-            this.widthGugusTugas = $('#gugusTugas').width() - 32;
+            this.widthGugusMahasiswa = $("#gugusMahasiswa").width() - 32;
+            this.widthGugusTugas = $("#gugusTugas").width() - 32;
           }, 100);
         } else if (result.message === "Unauthorize") {
           localStorage.clear();

@@ -220,6 +220,25 @@
             </div>
           </router-link>
 
+          <router-link :to="{ name: 'My Course' }">
+            <div
+              :class="
+                `item ${
+                  link[2] == 'course' ? 'active' : ''
+                } d-flex align-items-center`
+              "
+            >
+              <div
+                style="width: 20px"
+                class="icons d-flex justify-content-center me-2"
+              >
+                <i class="fas fa-book text-primary none"></i>
+                <i class="fas fa-book text-white active"></i>
+              </div>
+              <div class="text">Kursus Saya</div>
+            </div>
+          </router-link>
+
           <div
             :class="
               `item ${
