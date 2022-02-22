@@ -70,6 +70,9 @@ import KuisMahasiswa from "../pages/Mahasiswa/Kuis.vue";
 import AktivitasMahasiswa from "../pages/Mahasiswa/Aktivitas.vue";
 import MateriMahasiswa from "../pages/Mahasiswa/Materi.vue";
 import DetailMateriMahasiswa from "../pages/Mahasiswa/DetailMateri.vue";
+import MyCourse from "../pages/Mahasiswa/Course.vue";
+import MyCourseDetail from "../pages/Mahasiswa/CourseDetail.vue";
+import CourseChapter from "../pages/Mahasiswa/CourseChapter.vue";
 
 Vue.use(VueRouter);
 
@@ -353,7 +356,7 @@ const routes = [
   {
     path: "/dashboard/conference",
     name: "List Conference",
-    component: ListConferenceMahasiswa
+    component: ListConferenceMahasiswa,
   },
   {
     path: "/dashboard/conference/:id",
@@ -389,6 +392,21 @@ const routes = [
     path: "/dashboard/detail-materi/:id",
     name: "Detail Materi Mahasiswa",
     component: DetailMateriMahasiswa,
+  },
+  {
+    path: "/dashboard/course",
+    name: "My Course",
+    component: MyCourse,
+  },
+  {
+    path: "/dashboard/course/:id",
+    name: "My Course Detail",
+    component: MyCourseDetail,
+  },
+  {
+    path: "/dashboard/course/:id/:chapter",
+    name: "Course Chapter",
+    component: CourseChapter,
   },
 ];
 
