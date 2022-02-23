@@ -15,6 +15,7 @@ import TambahKursus from "../pages/Admin/Kursus/Create.vue";
 import UbahKursus from "../pages/Admin/Kursus/Edit.vue";
 // Manage Kursus
 import ManageKursusIndex from "../pages/Admin/Kursus/Manage/Index.vue";
+import ManageKursusPeserta from "../pages/Admin/Kursus/Manage/Participant.vue";
 
 import PresensiMaster from "../pages/Admin/Presensi.vue";
 import MahasiswaMaster from "../pages/Admin/Mahasiswa.vue";
@@ -129,6 +130,11 @@ const routes = [
     path: "/admin/kursus/manage/:id",
     name: "Manage Kursus Index",
     component: ManageKursusIndex,
+  },
+  {
+    path: "/admin/kursus/manage/:id/peserta",
+    name: "Manage Kursus Peserta",
+    component: ManageKursusPeserta,
   },
 
   {

@@ -44,11 +44,13 @@
         </div>
         <div class="menu-wrapper">
           <div class="menu-name">Menu</div>
-          <router-link :to="{ name: 'Fakultas Master' }">
+          <router-link
+            :to="{ name: 'Manage Kursus Peserta', params: { id: 1 } }"
+          >
             <div
               :class="
                 `item ${
-                  $route.name == '' ? 'active' : ''
+                  $route.name == 'Manage Kursus Peserta' ? 'active' : ''
                 } d-flex align-items-center`
               "
               data-bs-toggle="collapse"
