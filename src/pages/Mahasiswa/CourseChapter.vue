@@ -123,8 +123,18 @@
                 <div class="col-lg-9">
                   <div class="card">
                     <div class="card-body">
-                      <div class="h5">
+                      <div class="h5 fw-bold">
                         Pengenalan Fundamentals JavaScript
+                      </div>
+                      <div class="row my-4">
+                        <div class="col-lg-12">
+                          <video controls style="width: 100%;">
+                            <source
+                              :src="'https://w3school.com/html/mov_bbb.mp4'"
+                              type="video/mp4"
+                            />
+                          </video>
+                        </div>
                       </div>
                       <p>
                         Setelah kita mengetahui apa itu JavaScript dan sejarah
