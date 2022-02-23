@@ -9,7 +9,7 @@
         Close
       </div>
       <router-link :to="{ name: 'Index' }">
-        <div class="d-flex align-items-center mb-4">
+        <div class="d-flex align-items-center">
           <img :src="dataLanding.logo" alt="" style="height: 45px;" />
           <div class="logo-text ms-2">
             {{ dataLanding.nama }}
@@ -138,6 +138,25 @@
                 <i class="fas fa-book text-white active"></i>
               </div>
               <div class="text">Materi</div>
+            </div>
+          </router-link>
+
+          <router-link :to="{ name: 'Kursus Master' }">
+            <div
+              :class="
+                `item ${
+                  link[2] == 'kursus' ? 'active' : ''
+                } d-flex align-items-center`
+              "
+            >
+              <div
+                style="width: 20px"
+                class="icons d-flex justify-content-center me-2"
+              >
+                <i class="fas fa-book text-primary none"></i>
+                <i class="fas fa-book text-white active"></i>
+              </div>
+              <div class="text">Kursus</div>
             </div>
           </router-link>
 
@@ -415,7 +434,7 @@
       </div>
     </div>
     <div :class="`content ${$attrs.widthContent > 992 ? '' : 'hide'}`">
-      <div class="section pt-3 mb-5">
+      <div class="section pt-3 mb-3">
         <nav>
           <div class="card-shadow">
             <div class="py-2 px-3">

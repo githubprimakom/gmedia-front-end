@@ -8,6 +8,14 @@ import Logout from "../pages/Auth/Logout.vue";
 
 // Admin
 import DashboardAdmin from "../pages/Admin/index.vue";
+
+// Admin Kursus
+import KursusMaster from "../pages/Admin/Kursus/Index.vue";
+import TambahKursus from "../pages/Admin/Kursus/Create.vue";
+import UbahKursus from "../pages/Admin/Kursus/Edit.vue";
+// Manage Kursus
+import ManageKursusIndex from "../pages/Admin/Kursus/Manage/Index.vue";
+
 import PresensiMaster from "../pages/Admin/Presensi.vue";
 import MahasiswaMaster from "../pages/Admin/Mahasiswa.vue";
 import BankSoal from "../pages/Admin/BankSoal.vue";
@@ -99,6 +107,30 @@ const routes = [
     name: "Dashboard Admin",
     component: DashboardAdmin,
   },
+
+  // Kursus
+  {
+    path: "/admin/kursus",
+    name: "Kursus Master",
+    component: KursusMaster,
+  },
+  {
+    path: "/admin/kursus/create",
+    name: "Tambah Kursus",
+    component: TambahKursus,
+  },
+  {
+    path: "/admin/kursus/:id/edit",
+    name: "Ubah Kursus",
+    component: UbahKursus,
+  },
+  // Manage Kursus
+  {
+    path: "/admin/kursus/manage/:id",
+    name: "Manage Kursus Index",
+    component: ManageKursusIndex,
+  },
+
   {
     path: "/admin/presensi",
     name: "Presensi Master",
