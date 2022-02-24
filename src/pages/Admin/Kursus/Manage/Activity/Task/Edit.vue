@@ -8,11 +8,14 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center">
                 <div class="title-content">
-                  Tambah Kursus
+                  Buat Video Konferensi
                 </div>
               </div>
               <router-link
-                :to="{ name: 'Kursus Master' }"
+                :to="{
+                  name: 'Manage Kursus Lihat Topik',
+                  params: { id: $route.params.id, topic: $route.params.topic },
+                }"
                 class="btn btn-success"
                 type="button"
               >
@@ -153,10 +156,10 @@ export default {
         $(".my-select-2").select2({
           theme: "bootstrap-5",
         });
-        $(".material-datepicker").bootstrapMaterialDatePicker({
-          format: "YYYY-MM-DD HH:mm",
-          time: false,
-        });
+        // $(".material-datepicker").bootstrapMaterialDatePicker({
+        //   format: "YYYY-MM-DD HH:mm",
+        //   time: false,
+        // });
       }, 500);
     });
   },

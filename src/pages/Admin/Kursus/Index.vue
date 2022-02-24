@@ -36,7 +36,7 @@
                         <th scope="col" class="text-center">KATEGORI</th>
                         <th scope="col" class="text-center">MULAI - SELESAI</th>
                         <th scope="col" class="text-center">TERBIT</th>
-                        <th scope="col" class="text-center">PENGAMPU</th>
+                        <th scope="col" class="text-center">DIBUAT OLEH</th>
                         <th scope="col" class="text-center">AKSI</th>
                       </tr>
                     </thead>

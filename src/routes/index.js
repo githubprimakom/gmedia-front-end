@@ -15,6 +15,25 @@ import TambahKursus from "../pages/Admin/Kursus/Create.vue";
 import UbahKursus from "../pages/Admin/Kursus/Edit.vue";
 // Manage Kursus
 import ManageKursusIndex from "../pages/Admin/Kursus/Manage/Index.vue";
+import ManageKursusPeserta from "../pages/Admin/Kursus/Manage/Participant.vue";
+import ManageKursusLihatTopik from "../pages/Admin/Kursus/Manage/Topic.vue";
+import ManageKursusBuatTopik from "../pages/Admin/Kursus/Manage/CreateTopic.vue";
+import ManageKursusUbahTopik from "../pages/Admin/Kursus/Manage/EditTopic.vue";
+// File
+import ManageKursusTopikBuatFile from "../pages/Admin/Kursus/Manage/Activity/File/Create.vue";
+import ManageKursusTopikUbahFile from "../pages/Admin/Kursus/Manage/Activity/File/Edit.vue";
+// Forum
+import ManageKursusTopikBuatForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Create.vue";
+import ManageKursusTopikUbahForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Edit.vue";
+// Meet
+import ManageKursusTopikBuatMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Create.vue";
+import ManageKursusTopikUbahMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Edit.vue";
+// Task
+import ManageKursusTopikBuatTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Create.vue";
+import ManageKursusTopikUbahTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Edit.vue";
+import ManageKursusTopikLihatTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Show.vue";
+import ManageKursusTopikPengerjaanTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Assignment.vue";
+import ManageKursusTopikPenilaianTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Grading.vue";
 
 import PresensiMaster from "../pages/Admin/Presensi.vue";
 import MahasiswaMaster from "../pages/Admin/Mahasiswa.vue";
@@ -129,6 +148,85 @@ const routes = [
     path: "/admin/kursus/manage/:id",
     name: "Manage Kursus Index",
     component: ManageKursusIndex,
+  },
+  {
+    path: "/admin/kursus/manage/:id/peserta",
+    name: "Manage Kursus Peserta",
+    component: ManageKursusPeserta,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic",
+    name: "Manage Kursus Lihat Topik",
+    component: ManageKursusLihatTopik,
+  },
+  {
+    path: "/admin/kursus/manage/:id/buat-topik",
+    name: "Manage Kursus Buat Topik",
+    component: ManageKursusBuatTopik,
+  },
+  {
+    path: "/admin/kursus/manage/:id/ubah-topik/:topic",
+    name: "Manage Kursus Ubah Topik",
+    component: ManageKursusUbahTopik,
+  },
+  // File
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/buat-file",
+    name: "Manage Kursus Topik Buat File",
+    component: ManageKursusTopikBuatFile,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/ubah-file/:file",
+    name: "Manage Kursus Topik Ubah File",
+    component: ManageKursusTopikUbahFile,
+  },
+  // Forum
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/buat-forum",
+    name: "Manage Kursus Topik Buat Forum",
+    component: ManageKursusTopikBuatForum,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/ubah-forum/:forum",
+    name: "Manage Kursus Topik Ubah Forum",
+    component: ManageKursusTopikUbahForum,
+  },
+  // Meet
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/buat-meet",
+    name: "Manage Kursus Topik Buat Meet",
+    component: ManageKursusTopikBuatMeet,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/ubah-meet/:meet",
+    name: "Manage Kursus Topik Ubah Meet",
+    component: ManageKursusTopikUbahMeet,
+  },
+  // Task
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/buat-tugas",
+    name: "Manage Kursus Topik Buat Tugas",
+    component: ManageKursusTopikBuatTugas,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/ubah-tugas/:task",
+    name: "Manage Kursus Topik Ubah Tugas",
+    component: ManageKursusTopikUbahTugas,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task",
+    name: "Manage Kursus Topik Lihat Tugas",
+    component: ManageKursusTopikLihatTugas,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/pengerjaan",
+    name: "Manage Kursus Topik Pengerjaan Tugas",
+    component: ManageKursusTopikPengerjaanTugas,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/penilaian",
+    name: "Manage Kursus Topik Penilaian Tugas",
+    component: ManageKursusTopikPenilaianTugas,
   },
 
   {
