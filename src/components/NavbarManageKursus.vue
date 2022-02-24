@@ -68,6 +68,94 @@
             </div>
           </router-link>
         </div>
+        <div
+          :class="`item d-flex align-items-center`"
+          data-bs-toggle="collapse"
+          data-bs-target="#order"
+          aria-expanded="false"
+          aria-controls="order"
+        >
+          <div
+            style="width: 20px"
+            class="icons d-flex justify-content-center me-2"
+          >
+            <i class="fas fa-file text-primary none"></i>
+            <i class="fas fa-file text-white active"></i>
+          </div>
+          <div class="text">Topik</div>
+        </div>
+        <div class="collapse show" id="order">
+          <router-link
+            :to="{
+              name: 'Manage Kursus Lihat Topik',
+              params: { id: 1, topic: 1 },
+            }"
+          >
+            <div
+              :class="
+                `item sub ${
+                  $route.name == 'Manage Kursus Lihat Topik' &&
+                  $route.params.topic == 1
+                    ? 'active'
+                    : ''
+                } d-flex align-items-center`
+              "
+            >
+              <div class="icons me-2">
+                <i class="far fa-circle text-primary none"></i>
+                <i class="far fa-circle text-white active"></i>
+              </div>
+              <div class="text">Topik 1</div>
+            </div>
+          </router-link>
+        </div>
+        <div class="collapse show" id="order">
+          <router-link
+            :to="{
+              name: 'Manage Kursus Lihat Topik',
+              params: { id: 1, topic: 2 },
+            }"
+          >
+            <div
+              :class="
+                `item sub ${
+                  $route.name == 'Manage Kursus Lihat Topik' &&
+                  $route.params.topic == 2
+                    ? 'active'
+                    : ''
+                } d-flex align-items-center`
+              "
+            >
+              <div class="icons me-2">
+                <i class="far fa-circle text-primary none"></i>
+                <i class="far fa-circle text-white active"></i>
+              </div>
+              <div class="text">Topik 2</div>
+            </div>
+          </router-link>
+        </div>
+        <div class="collapse show" id="order">
+          <router-link
+            :to="{
+              name: 'Manage Kursus Buat Topik',
+              params: { id: 1 },
+            }"
+          >
+            <div
+              :class="
+                `item sub ${
+                  $route.name == 'Manage Kursus Buat Topik' ? 'active' : ''
+                } d-flex align-items-center`
+              "
+            >
+              <div class="icons me-2">
+                <i class="fas fa-plus text-primary none"></i>
+                <i class="fas fa-plus text-white active"></i>
+              </div>
+              <div class="text">Tambah</div>
+            </div>
+          </router-link>
+        </div>
       </div>
     </div>
     <div :class="`content ${$attrs.widthContent > 992 ? '' : 'hide'}`">
