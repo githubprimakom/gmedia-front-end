@@ -68,7 +68,7 @@
                           </div>
                         </div>
                         <div class="row mb-2">
-                          <div class="col-lg-5 mb-3">
+                          <div class="col-lg-6 mb-3">
                             <label for="mulai-edit" class="form-label"
                               >Mulai</label
                             >
@@ -79,7 +79,7 @@
                               :disabled="unlimited"
                             />
                           </div>
-                          <div class="col-lg-5 mb-3">
+                          <div class="col-lg-6 mb-3">
                             <label for="selesai-edit" class="form-label"
                               >Selesai</label
                             >

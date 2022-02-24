@@ -83,6 +83,27 @@
                         aria-describedby="selesai"
                       />
                     </div>
+                    <div class="col-lg-12 mb-2">
+                      <label for="deskripsi_singkat" class="form-label"
+                        >Deskripsi Singkat</label
+                      >
+                      <textarea
+                        id="deskripsi_singkat"
+                        cols="30"
+                        rows="2"
+                        maxlength="255"
+                        class="form-control"
+                      ></textarea>
+                      <div class="form-text text-danger">
+                        Maksimal 255 karakter
+                      </div>
+                    </div>
+                    <div class="col-lg-12 mb-2">
+                      <label for="deskripsi" class="form-label"
+                        >Deskripsi</label
+                      >
+                      <VueEditor />
+                    </div>
                     <div class="col-lg-6 mb-2">
                       <div class="form-check">
                         <input
@@ -114,6 +135,7 @@
 
 <script>
 /* eslint-env jquery */
+import { VueEditor } from "vue2-editor";
 
 export default {
   data: function() {
@@ -121,7 +143,9 @@ export default {
       width: null,
     };
   },
-  methods: {},
+  components: {
+    VueEditor,
+  },
   mounted() {
     this.width = $(document).width();
     $(() => {
@@ -138,3 +162,12 @@ export default {
   },
 };
 </script>
+
+<style lang="css">
+@import "~vue2-editor/dist/vue2-editor.css";
+
+/* Import the Quill styles you want */
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+</style>

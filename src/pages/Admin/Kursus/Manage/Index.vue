@@ -53,12 +53,34 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center">
                 <div class="title-content">
-                  Bagikan Kursus
+                  Belajar Fundamental Aplikasi Back-End
                 </div>
               </div>
               <button class="btn btn-info text-white" type="button">
                 <i class="fas fa-copy"></i> Salin Link Kursus
               </button>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-4">
+                <img
+                  src="https://glints.com/id/lowongan/wp-content/uploads/2019/12/code-coding-computer-data-574070-1.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-lg-8">
+                <p>
+                  Back-End Developer memiliki peran penting dalam membangun
+                  sistem aplikasi, karena ia bertanggung jawab membuat service
+                  yang dapat mengelola serta mengamankan data yang digunakan
+                  oleh suatu aplikasi. Pengelolaan yang tidak baik dan tidak
+                  aman akan menimbulkan banyak kerugian bagi perusahaan, bahkan
+                  bisa memicu kebangkrutan. Kelas ini membahas tuntas materi
+                  dalam membangun RESTful service yang canggih dan aman seperti
+                  database, storage, hingga authentication, dan authorization.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -83,6 +83,39 @@
                         aria-describedby="selesai"
                       />
                     </div>
+                    <div class="col-lg-12 mb-2">
+                      <label for="deskripsi_singkat" class="form-label"
+                        >Deskripsi Singkat</label
+                      >
+                      <textarea
+                        id="deskripsi_singkat"
+                        cols="30"
+                        rows="2"
+                        maxlength="255"
+                        class="form-control"
+                      ></textarea>
+                      <div class="form-text text-danger">
+                        Maksimal 255 karakter
+                      </div>
+                    </div>
+                    <div class="col-lg-12 mb-2">
+                      <label for="deskripsi" class="form-label"
+                        >Deskripsi</label
+                      >
+                      <VueEditor />
+                    </div>
+                    <div class="col-lg-6 mb-2">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label class="form-check-label" for="exampleCheck1"
+                          >Ceklis untuk menerbitkan kursus ini</label
+                        >
+                      </div>
+                    </div>
                     <div class="col-lg-6 mb-2">
                       <div class="form-check">
                         <input
