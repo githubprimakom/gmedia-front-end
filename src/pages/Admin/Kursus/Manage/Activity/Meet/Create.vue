@@ -16,7 +16,7 @@
                   name: 'Manage Kursus Lihat Topik',
                   params: { id: $route.params.id, topic: $route.params.topic },
                 }"
-                class="btn btn-success"
+                class="btn btn-outline-secondary"
                 type="button"
               >
                 <i class="fas fa-arrow-left"></i> Kembali

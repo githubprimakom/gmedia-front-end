@@ -25,6 +25,8 @@ import ManageKursusTopikUbahFile from "../pages/Admin/Kursus/Manage/Activity/Fil
 // Forum
 import ManageKursusTopikBuatForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Create.vue";
 import ManageKursusTopikUbahForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Edit.vue";
+import ManageKursusTopikLihatForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Show.vue";
+import ManageKursusTopikDiskusiForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Discuss.vue";
 // Meet
 import ManageKursusTopikBuatMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Create.vue";
 import ManageKursusTopikUbahMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Edit.vue";
@@ -190,6 +192,17 @@ const routes = [
     path: "/admin/kursus/manage/:id/topik/:topic/ubah-forum/:forum",
     name: "Manage Kursus Topik Ubah Forum",
     component: ManageKursusTopikUbahForum,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-forum/:forum",
+    name: "Manage Kursus Topik Lihat Forum",
+    component: ManageKursusTopikLihatForum,
+  },
+  {
+    path:
+      "/admin/kursus/manage/:id/topik/:topic/lihat-forum/:forum/diskusi/:discuss",
+    name: "Manage Kursus Topik Diskusi Forum",
+    component: ManageKursusTopikDiskusiForum,
   },
   // Meet
   {
