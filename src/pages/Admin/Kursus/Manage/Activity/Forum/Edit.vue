@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <NavbarAdmin :widthContent="width" />
+    <NavbarManageKursus :widthContent="width" />
     <div :class="`content ${width > 992 ? '' : 'hide'}`">
       <div class="section">
         <div class="card-shadow mb-3">
@@ -8,7 +8,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center">
                 <div class="title-content">
-                  Buat Forum
+                  Ubah Forum
                 </div>
               </div>
               <router-link
@@ -67,6 +67,7 @@
 
 <script>
 /* eslint-env jquery */
+import NavbarManageKursus from "../../../../../../components/NavbarManageKursus.vue";
 import { VueEditor } from "vue2-editor";
 
 export default {
@@ -77,6 +78,7 @@ export default {
   },
   components: {
     VueEditor,
+    NavbarManageKursus,
   },
   mounted() {
     this.width = $(document).width();

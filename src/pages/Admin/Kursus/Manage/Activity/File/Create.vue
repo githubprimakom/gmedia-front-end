@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <NavbarAdmin :widthContent="width" />
+    <NavbarManageKursus :widthContent="width" />
     <div :class="`content ${width > 992 ? '' : 'hide'}`">
       <div class="section">
         <div class="card-shadow mb-3">
@@ -76,6 +76,7 @@
 
 <script>
 /* eslint-env jquery */
+import NavbarManageKursus from "../../../../../../components/NavbarManageKursus.vue";
 import { VueEditor } from "vue2-editor";
 
 export default {
@@ -86,6 +87,7 @@ export default {
   },
   components: {
     VueEditor,
+    NavbarManageKursus,
   },
   mounted() {
     this.width = $(document).width();
