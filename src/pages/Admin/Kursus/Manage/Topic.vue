@@ -81,7 +81,108 @@
                     Aksi
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="aksi-1">
-                    <li><a class="dropdown-item" href="#">Ubah</a></li>
+                    <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Topik Ubah Meet',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            meet: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Ubah</router-link
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Hapus</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-10">
+                <a
+                  href="https://zoom.us"
+                  class="text-decoration-none me-3"
+                  target="_blank"
+                >
+                  <i class="fas fa-bullhorn me-2"></i>Forum diskusi</a
+                >
+              </div>
+              <div class="col-lg-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggle btn-sm"
+                    type="button"
+                    id="aksi-1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Aksi
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="aksi-1">
+                    <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Topik Ubah Forum',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            meet: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Ubah</router-link
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Hapus</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-lg-10">
+                <a
+                  href="https://zoom.us"
+                  class="text-decoration-none me-3"
+                  target="_blank"
+                >
+                  <i class="fas fa-file me-2"></i>File materi 1</a
+                >
+              </div>
+              <div class="col-lg-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggle btn-sm"
+                    type="button"
+                    id="aksi-1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Aksi
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="aksi-1">
+                    <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Topik Ubah File',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            meet: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Ubah</router-link
+                      >
+                    </li>
                     <li>
                       <a class="dropdown-item" href="#">Hapus</a>
                     </li>
