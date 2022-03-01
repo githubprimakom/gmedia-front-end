@@ -105,12 +105,18 @@
             <hr />
             <div class="row">
               <div class="col-lg-10">
-                <a
-                  href="https://zoom.us"
+                <router-link
+                  :to="{
+                    name: 'Manage Kursus Topik Lihat Forum',
+                    params: {
+                      id: $route.params.id,
+                      topic: $route.params.topic,
+                      forum: 1,
+                    },
+                  }"
                   class="text-decoration-none me-3"
-                  target="_blank"
                 >
-                  <i class="fas fa-bullhorn me-2"></i>Forum diskusi</a
+                  <i class="fas fa-bullhorn me-2"></i>Forum diskusi</router-link
                 >
               </div>
               <div class="col-lg-2">
@@ -216,6 +222,20 @@
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="aksi-1">
                     <li><a class="dropdown-item" href="#">Ubah</a></li>
+                    <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Tugas Soal',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            task: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Lihat Soal</router-link
+                      >
+                    </li>
                     <li>
                       <a class="dropdown-item" href="#">Hapus</a>
                     </li>

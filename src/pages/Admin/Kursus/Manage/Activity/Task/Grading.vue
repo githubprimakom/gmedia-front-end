@@ -20,7 +20,7 @@
                     task: $route.params.task,
                   },
                 }"
-                class="btn btn-success"
+                class="btn btn-outline-secondary"
                 type="button"
               >
                 <i class="fas fa-arrow-left"></i> Kembali

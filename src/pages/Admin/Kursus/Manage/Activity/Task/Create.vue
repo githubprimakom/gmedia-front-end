@@ -8,7 +8,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center">
                 <div class="title-content">
-                  Buat Video Konferensi
+                  Buat Tugas
                 </div>
               </div>
               <router-link
@@ -16,7 +16,7 @@
                   name: 'Manage Kursus Lihat Topik',
                   params: { id: $route.params.id, topic: $route.params.topic },
                 }"
-                class="btn btn-success"
+                class="btn btn-outline-secondary"
                 type="button"
               >
                 <i class="fas fa-arrow-left"></i> Kembali
@@ -30,7 +30,7 @@
               <div class="p-3">
                 <form>
                   <div class="row">
-                    <div class="col-lg-6 mb-2">
+                    <div class="col-lg-12 mb-2">
                       <label for="judul" class="form-label">Judul</label>
                       <input
                         type="text"
@@ -42,38 +42,20 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                       </div>
                     </div>
-                    <div class="col-lg-6 mb-2">
-                      <label for="level" class="form-label">Level</label>
-                      <select
-                        class="form-select my-select-2"
-                        aria-label="Default select example"
-                        id="level"
-                      >
-                        <option selected>Pilih Level</option>
-                        <option value="1">Mudah</option>
-                        <option value="2">Menengah</option>
-                        <option value="3">Sulit</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-4 mb-2">
-                      <label for="kategori" class="form-label">Kategori</label>
-                      <select
-                        class="form-select my-select-2"
-                        aria-label="Default select example"
-                        id="kategori"
-                      >
-                        <option>Pilih Kategori</option>
-                        <option value="1">Mudah</option>
-                        <option value="2">Menengah</option>
-                        <option value="3">Sulit</option>
-                      </select>
-                    </div>
                     <div class="col-lg-4 mb-2">
                       <label for="mulai" class="form-label">Mulai</label>
                       <input
                         type="date"
                         class="form-control material-datepicker"
                         id="mulai"
+                        aria-describedby="mulai"
+                      />
+                    </div>
+                    <div class="col-lg-2 mb-2">
+                      <label class="form-label">&nbsp;</label>
+                      <input
+                        type="time"
+                        class="form-control"
                         aria-describedby="mulai"
                       />
                     </div>
@@ -86,38 +68,19 @@
                         aria-describedby="selesai"
                       />
                     </div>
-                    <div class="col-lg-12 mb-2">
-                      <label for="deskripsi_singkat" class="form-label"
-                        >Deskripsi Singkat</label
-                      >
-                      <textarea
-                        id="deskripsi_singkat"
-                        cols="30"
-                        rows="2"
-                        maxlength="255"
+                    <div class="col-lg-2 mb-2">
+                      <label class="form-label">&nbsp;</label>
+                      <input
+                        type="time"
                         class="form-control"
-                      ></textarea>
-                      <div class="form-text text-danger">
-                        Maksimal 255 karakter
-                      </div>
+                        aria-describedby="mulai"
+                      />
                     </div>
                     <div class="col-lg-12 mb-2">
                       <label for="deskripsi" class="form-label"
                         >Deskripsi</label
                       >
                       <VueEditor />
-                    </div>
-                    <div class="col-lg-6 mb-2">
-                      <div class="form-check">
-                        <input
-                          type="checkbox"
-                          class="form-check-input"
-                          id="exampleCheck1"
-                        />
-                        <label class="form-check-label" for="exampleCheck1"
-                          >Ceklis untuk menerbitkan kursus ini</label
-                        >
-                      </div>
                     </div>
                     <div class="col-lg-12">
                       <button type="submit" class="btn btn-primary">
