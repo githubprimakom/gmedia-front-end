@@ -96,6 +96,16 @@
                               "
                               ><i class="fas fa-eye"></i
                             ></router-link>
+                            <router-link
+                              :to="{
+                                name: 'Ubah Kursus',
+                                params: { id: 1 },
+                              }"
+                              class="
+                                btn btn-warning btn-sm me-2
+                              "
+                              ><i class="fas fa-edit"></i
+                            ></router-link>
                             <button
                               class="btn btn-danger btn-sm text-white"
                               type="button"
