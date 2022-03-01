@@ -221,7 +221,20 @@
                     Aksi
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="aksi-1">
-                    <li><a class="dropdown-item" href="#">Ubah</a></li>
+                    <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Topik Ubah Tugas',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            task: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Ubah</router-link
+                      >
+                    </li>
                     <li>
                       <router-link
                         :to="{
