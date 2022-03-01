@@ -36,6 +36,9 @@ import ManageKursusTopikUbahTugas from "../pages/Admin/Kursus/Manage/Activity/Ta
 import ManageKursusTopikLihatTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Show.vue";
 import ManageKursusTopikPengerjaanTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Assignment.vue";
 import ManageKursusTopikPenilaianTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Grading.vue";
+import ManageKursusTugasSoal from "../pages/Admin/Kursus/Manage/Activity/Task/Question/Index.vue";
+import ManageKursusTugasBuatSoal from "../pages/Admin/Kursus/Manage/Activity/Task/Question/Create.vue";
+import ManageKursusTugasUbahSoal from "../pages/Admin/Kursus/Manage/Activity/Task/Question/Edit.vue";
 
 import PresensiMaster from "../pages/Admin/Presensi.vue";
 import MahasiswaMaster from "../pages/Admin/Mahasiswa.vue";
@@ -240,6 +243,23 @@ const routes = [
     path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/penilaian",
     name: "Manage Kursus Topik Penilaian Tugas",
     component: ManageKursusTopikPenilaianTugas,
+  },
+  // Task -> Question
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/soal",
+    name: "Manage Kursus Tugas Soal",
+    component: ManageKursusTugasSoal,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/buat-soal",
+    name: "Manage Kursus Tugas Buat Soal",
+    component: ManageKursusTugasBuatSoal,
+  },
+  {
+    path:
+      "/admin/kursus/manage/:id/topik/:topic/lihat-tugas/:task/ubah-soal/:question",
+    name: "Manage Kursus Tugas Ubah Soal",
+    component: ManageKursusTugasUbahSoal,
   },
 
   {

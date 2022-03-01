@@ -28,12 +28,28 @@
           <div class="col-lg-12 mb-3">
             <div class="card-shadow mb-3">
               <div class="p-3">
-                <p>Petunjuk pengerjaan :</p>
-                <p>1. Kerjakan soal yang mudah-mudah terlebih dahulu</p>
-                <p>2. Berdoa</p>
-                <a href="#" class="d-block" target="_blank">
-                  <i class="fas fa-file me-2"></i>Materi.docx</a
-                >
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p>Petunjuk pengerjaan :</p>
+                    <p>1. Kerjakan soal yang mudah-mudah terlebih dahulu</p>
+                    <p>2. Berdoa</p>
+                  </div>
+                  <div>
+                    <router-link
+                      :to="{
+                        name: 'Manage Kursus Tugas Soal',
+                        params: {
+                          id: $route.params.id,
+                          topic: $route.params.topic,
+                          task: $route.params.task,
+                        },
+                      }"
+                      class="btn btn-success"
+                    >
+                      <i class="fas fa-plus me-2"></i> Lihat Soal
+                    </router-link>
+                  </div>
+                </div>
                 <hr />
                 <div class="h5 fw-bold">Ringkasan penilaian</div>
                 <div class="row py-2 border-bottom bg-light">

@@ -223,6 +223,20 @@
                   <ul class="dropdown-menu" aria-labelledby="aksi-1">
                     <li><a class="dropdown-item" href="#">Ubah</a></li>
                     <li>
+                      <router-link
+                        :to="{
+                          name: 'Manage Kursus Tugas Soal',
+                          params: {
+                            id: $route.params.id,
+                            topic: $route.params.topic,
+                            task: 1,
+                          },
+                        }"
+                        class="dropdown-item"
+                        >Lihat Soal</router-link
+                      >
+                    </li>
+                    <li>
                       <a class="dropdown-item" href="#">Hapus</a>
                     </li>
                   </ul>
