@@ -13,7 +13,7 @@
               </div>
               <router-link
                 :to="{ name: 'Kursus Master' }"
-                class="btn btn-success"
+                class="btn btn-outline-secondary"
                 type="button"
               >
                 <i class="fas fa-arrow-left"></i> Kembali

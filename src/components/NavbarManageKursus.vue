@@ -1,19 +1,19 @@
 <template>
   <div class="dashboard-navigation">
     <div :class="`sidebar ${$attrs.widthContent > 992 ? '' : 'hide'}`">
-      <div class="btn btn-dark d-flex d-none d-lg-block text-start">
-        <router-link :to="{ name: 'Kursus Master' }" class="text-white">
+      <router-link :to="{ name: 'Kursus Master' }" class="text-white">
+        <div class="btn btn-dark d-flex d-none d-lg-block text-start">
           <i class="fas fa-arrow-left me-2"></i>
           Kembali
-        </router-link>
-      </div>
+        </div>
+      </router-link>
       <div class="d-flex justify-content-between d-lg-none">
-        <div class="col-9 btn btn-dark d-flex align-items-center me-1">
-          <router-link :to="{ name: 'Kursus Master' }" class="text-white">
+        <router-link :to="{ name: 'Kursus Master' }" class="text-white">
+          <div class="col-9 btn btn-dark d-flex align-items-center me-1">
             <i class="fas fa-arrow-left me-2"></i>
             Kembali
-          </router-link>
-        </div>
+          </div>
+        </router-link>
         <div
           class="col-2 btn btn-light d-flex align-items-center"
           @click="sidebar"
