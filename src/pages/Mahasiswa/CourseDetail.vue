@@ -139,7 +139,7 @@
                                       <div class="modal-dialog">
                                         <div class="modal-content">
                                           <div class="modal-body text-start">
-                                            <h5>Masukkan Nama</h5>
+                                            <h6>Masukkan Nama</h6>
                                             <input
                                               type="text"
                                               class="form-control mb-3"
@@ -188,9 +188,42 @@
                                       >Berikan feedback &amp; testimoni
                                       kamu</small
                                     >
+                                    <div
+                                      class="modal fade"
+                                      id="feedback"
+                                      tabindex="-1"
+                                      aria-labelledby="feedbackLabel"
+                                      aria-hidden="true"
+                                    >
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-body text-start">
+                                            <h6>Masukkan Testimoni</h6>
+                                            <textarea
+                                              cols="30"
+                                              rows="3"
+                                              class="form-control mb-3"
+                                            ></textarea>
+                                            <a
+                                              :href="
+                                                $router.resolve({
+                                                  name: 'My Course Detail',
+                                                  params: { id: 1 },
+                                                }).href
+                                              "
+                                              class="btn btn-primary"
+                                            >
+                                              Kirim
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                     <a
-                                      href="https://www.dicoding.com/academies/complete/256"
+                                      href="#"
                                       class="btn btn-primary mb-3"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#feedback"
                                       >Beri Feedback</a
                                     >
                                   </div>
