@@ -100,7 +100,7 @@ import PresensiMahasiswa from "../pages/Mahasiswa/Presensi.vue";
 import ConferenceMahasiswa from "../pages/Mahasiswa/Conference.vue";
 import ListConferenceMahasiswa from "../pages/Mahasiswa/ListConference.vue";
 import TugasMahasiswa from "../pages/Mahasiswa/Tugas.vue";
-import DoTugas from "../pages/Mahasiswa/DoTugas.vue";
+import DoTugas from "../pages/Mahasiswa/Task.vue";
 import KuisMahasiswa from "../pages/Mahasiswa/Kuis.vue";
 import AktivitasMahasiswa from "../pages/Mahasiswa/Aktivitas.vue";
 import MateriMahasiswa from "../pages/Mahasiswa/Materi.vue";
