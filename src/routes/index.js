@@ -100,7 +100,7 @@ import PresensiMahasiswa from "../pages/Mahasiswa/Presensi.vue";
 import ConferenceMahasiswa from "../pages/Mahasiswa/Conference.vue";
 import ListConferenceMahasiswa from "../pages/Mahasiswa/ListConference.vue";
 import TugasMahasiswa from "../pages/Mahasiswa/Tugas.vue";
-import DoTugas from "../pages/Mahasiswa/DoTugas.vue";
+import DoTugas from "../pages/Mahasiswa/Task.vue";
 import KuisMahasiswa from "../pages/Mahasiswa/Kuis.vue";
 import AktivitasMahasiswa from "../pages/Mahasiswa/Aktivitas.vue";
 import MateriMahasiswa from "../pages/Mahasiswa/Materi.vue";
@@ -108,6 +108,7 @@ import DetailMateriMahasiswa from "../pages/Mahasiswa/DetailMateri.vue";
 import MyCourse from "../pages/Mahasiswa/Course.vue";
 import MyCourseDetail from "../pages/Mahasiswa/CourseDetail.vue";
 import CourseChapter from "../pages/Mahasiswa/CourseChapter.vue";
+import Sertifikat from "../pages/Mahasiswa/Sertifikat.vue";
 
 Vue.use(VueRouter);
 
@@ -588,6 +589,11 @@ const routes = [
     path: "/dashboard/course/:id/:chapter",
     name: "Course Chapter",
     component: CourseChapter,
+  },
+  {
+    path: "/dashboard/generate-sertifikat",
+    name: "Sertifikat",
+    component: Sertifikat,
   },
 ];
 

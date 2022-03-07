@@ -19,7 +19,7 @@
               class="d-flex flex-md-row flex-column justify-content-md-between align-items-md-center align-items-start"
             >
               <div>
-                <div class="h2 text-white">Selamat datang</div>
+                <div class="h2 text-white">Selamat datang, Aditya Ricki</div>
                 <div class="p mb-4 text-white col-8">
                   Belajar dengan menyenangkan kapanpun dan dimanapun hanya
                   melalui aplikasi
@@ -32,87 +32,150 @@
             </div>
           </div>
         </div>
-        <div class="card-shadow mb-3">
-          <div class="p-3">
-            <div class="h5">
-              Selamat datang {{ userData ? userData.data.nama : "@Staff" }}, ayo
-              segera selesaikan tugas kamu ya
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <router-link :to="{ name: 'Materi Mahasiswa' }">
-                  <div
-                    class="card "
-                    style="border-bottom: 4px solid rgb(1, 103, 143);"
-                  >
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-3 d-flex align-items-center">
-                          <img
-                            src="https://teladan.pelindo.co.id/img/elearning.png"
-                            alt=""
-                            style="margin-top: 0%;"
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="col-md-9">
-                          <h4>Materi</h4>
-                          <hr />
-                          <div class="row">
-                            <div class="col-md-8">
-                              <strong><p>Materi tersedia</p></strong>
-                            </div>
-                            <div class="col-md-4 text-right">
-                              <h3>{{ materi }}</h3>
-                            </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card-shadow mb-3">
+              <div class="p-3">
+                <h5 class="card-title">
+                  <i class="fas fa-copy"></i> Aktivitas Belajar
+                </h5>
+                <hr />
+                <div class="row">
+                  <div class="col-lg-12 mb-3">
+                    <div class="card border-0 bg-light">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <span class="small text-secondary">
+                              Sedang dipelajari <i class="fas fa-clock"></i>
+                            </span>
+                            <h6>Belajar Fundamental Aplikasi Back-End</h6>
+                          </div>
+                          <div class="col-lg-3 text-center p-3">
+                            <router-link
+                              :to="{
+                                name: 'My Course Detail',
+                                params: {
+                                  id: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                                },
+                              }"
+                              class="text-decoration-underline"
+                              >Lanjutkan</router-link
+                            >
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </router-link>
+                  <div class="col-lg-12 mb-3">
+                    <div class="card border-0 bg-light">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <span class="small text-secondary">
+                              Sedang dipelajari <i class="fas fa-clock"></i>
+                            </span>
+                            <h6>
+                              Belajar Membuat Aplikasi Back-End untuk Pemula
+                            </h6>
+                          </div>
+                          <div class="col-lg-3 text-center p-3">
+                            <router-link
+                              :to="{
+                                name: 'My Course Detail',
+                                params: {
+                                  id: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                                },
+                              }"
+                              class="text-decoration-underline"
+                              >Lanjutkan</router-link
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mb-3">
+                    <div class="card border-0 bg-light">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <span class="small text-secondary">
+                              Sedang dipelajari <i class="fas fa-clock"></i>
+                            </span>
+                            <h6>
+                              Architecting on AWS (Membangun Arsitektur Cloud di
+                              AWS)
+                            </h6>
+                          </div>
+                          <div class="col-lg-3 text-center p-3">
+                            <router-link
+                              :to="{
+                                name: 'My Course Detail',
+                                params: {
+                                  id: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                                },
+                              }"
+                              class="text-decoration-underline"
+                              >Lanjutkan</router-link
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mb-3">
+                    <div class="card border bg-light border-info">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <small class="small text-secondary">
+                              Telah diselesaikan
+                              <i class="fas fa-check text-success"></i>
+                            </small>
+                            <h6>Belajar Dasar Pemrograman JavaScript</h6>
+                          </div>
+                          <div class="col-lg-3 text-center p-3">
+                            <a
+                              href="#"
+                              class="text-decoration-underline"
+                              data-bs-toggle="modal"
+                              data-bs-target="#sertifikatModal"
+                              >Lihat Sertifikat</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <router-link :to="{ name: 'Tugas Mahasiswa' }">
-                  <div
-                    class="card"
-                    style="border-bottom: 4px solid rgb(203, 128, 58);"
-                  >
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-3 d-flex align-items-center">
-                          <img
-                            src="https://teladan.pelindo.co.id/img/counseling.png"
-                            alt=""
-                            style="margin-top: 0%;"
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="col-md-9">
-                          <strong><h4>Tugas</h4></strong>
-                          <hr />
-                          <div class="row">
-                            <div class="col-md-8">
-                              <strong><p>Diselesaikan</p></strong>
-                            </div>
-                            <div class="col-md-4 text-right">
-                              <h3>{{ complete }}</h3>
-                            </div>
-                          </div>
-                          <div class="row mt-1">
-                            <div class="col-md-8">
-                              <strong><p>Belum diselesaikan</p></strong>
-                            </div>
-                            <div class="col-md-4 text-right">
-                              <h3>{{ incomplete }}</h3>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </router-link>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="sertifikatModal"
+          tabindex="-1"
+          aria-labelledby="sertifikatModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h5>Masukkan Nama</h5>
+                <input type="text" class="form-control mb-3" />
+                <a
+                  :href="
+                    $router.resolve({
+                      name: 'Sertifikat',
+                      params: { id: 1 },
+                    }).href
+                  "
+                  class="btn btn-primary"
+                >
+                  Generate
+                </a>
               </div>
             </div>
           </div>
@@ -125,71 +188,14 @@
 
 <script>
 /* eslint-env jquery */
-import { mapState } from "vuex";
-import axios from "axios";
-import moment from "moment";
-// import faceapi from 'face-api.js'
-// import smartcrop from "smartcrop";
 
 export default {
-  computed: {
-    ...mapState(["userData", "url"]),
-  },
   data: function() {
     return {
       width: null,
-      incomplete: 0,
-      complete: 0,
-      materi: 0,
     };
   },
-  methods: {
-    formatDate(date) {
-      return moment(date)
-        .locale("id")
-        .format("DD MMMM YYYY");
-    },
-  },
   mounted() {
-    axios
-      .get(`${this.url}tugas/mahasiswa/belum-selesai`, {
-        headers: {
-          Authorization: localStorage.token,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        this.incomplete = res.data.data.length;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    axios
-      .get(`${this.url}tugas/mahasiswa/sudah-selesai`, {
-        headers: {
-          Authorization: localStorage.token,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        this.complete = res.data.data.length;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    axios
-      .get(`${this.url}tugas/mahasiswa/materi/total`, {
-        headers: {
-          Authorization: localStorage.token,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        this.materi = res.data.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
     this.width = $(document).width();
   },
 };

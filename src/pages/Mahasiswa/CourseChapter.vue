@@ -9,10 +9,15 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item h6">
-                    <a href="#">Kursus Saya</a>
+                    <router-link :to="{ name: 'My Course' }"
+                      >Kursus Saya</router-link
+                    >
                   </li>
                   <li class="breadcrumb-item h6">
-                    <a href="#">Belajar Dasar Pemrograman Javascript</a>
+                    <router-link
+                      :to="{ name: 'My Course Detail', params: { id: '1' } }"
+                      >Belajar Dasar Pemrograman Javascript</router-link
+                    >
                   </li>
                   <li class="breadcrumb-item h6 active" aria-current="page">
                     Persetujuan Hak Cipta
@@ -168,7 +173,9 @@
                       </ul>
                       <p>
                         Apabila sudah memahami materi, anda dapat mengerjakan
-                        tugas
+                        tugas dibawah ini,
+                      </p>
+                      <p>
                         <router-link
                           :to="{
                             name: 'Do Tugas',
@@ -176,9 +183,19 @@
                               id: '1f6a5840-fbe8-4da3-9e5a-095ee962ecb6',
                             },
                           }"
-                          class="badge bg-danger text-decoration-none text-white"
-                          >DI SINI</router-link
-                        >.
+                          >1. Tugas Pertama</router-link
+                        >
+                      </p>
+                      <p>
+                        <router-link
+                          :to="{
+                            name: 'Do Tugas',
+                            params: {
+                              id: '1f6a5840-fbe8-4da3-9e5a-095ee962ecb6',
+                            },
+                          }"
+                          >2. Tugas Kedua</router-link
+                        >
                       </p>
                       <hr />
                       <div class="row">

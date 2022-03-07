@@ -129,9 +129,41 @@
                                       >Cetak sertifikat kamu sekarang
                                       juga</small
                                     >
+                                    <div
+                                      class="modal fade"
+                                      id="sertifikatModal"
+                                      tabindex="-1"
+                                      aria-labelledby="sertifikatModalLabel"
+                                      aria-hidden="true"
+                                    >
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-body text-start">
+                                            <h5>Masukkan Nama</h5>
+                                            <input
+                                              type="text"
+                                              class="form-control mb-3"
+                                            />
+                                            <a
+                                              :href="
+                                                $router.resolve({
+                                                  name: 'Sertifikat',
+                                                  params: { id: 1 },
+                                                }).href
+                                              "
+                                              class="btn btn-primary"
+                                            >
+                                              Generate
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                     <a
-                                      href="https://www.dicoding.com/academies/256/certificates/418774"
+                                      href="#"
                                       class="btn btn-primary mb-3"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#sertifikatModal"
                                     >
                                       Lihat Sertifikat
                                     </a>
@@ -219,7 +251,17 @@
                           Daftar sekarang untuk dapat mengikuti pembelajaran
                         </p>
                         <hr />
-                        <button class="btn btn-primary">MASUK KELAS</button>
+                        <router-link
+                          :to="{
+                            name: 'Course Chapter',
+                            params: {
+                              id: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                              chapter: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                            },
+                          }"
+                          class="btn btn-primary"
+                          >MASUK KELAS</router-link
+                        >
                       </div>
                     </div>
                   </div>
@@ -256,7 +298,18 @@
                                   <li
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
+                                    <span>1. Persetujuan Hak Cipta</span>
+                                    <span class="text-success"
+                                      ><i class="fas fa-check me-3"></i
+                                      >Selesai</span
+                                    >
+                                  </li>
+                                  <li
+                                    class="list-group-item d-flex justify-content-between align-items-center"
+                                  >
+                                    <span>2. Materi Android Pemula</span>
                                     <router-link
+                                      class="text-decoration-underline"
                                       :to="{
                                         name: 'Course Chapter',
                                         params: {
@@ -266,57 +319,33 @@
                                             '413d2ba-4494e2cb5-83e6b3e4a-8b094',
                                         },
                                       }"
-                                      >1. Persetujuan Hak Cipta</router-link
                                     >
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
-                                  </li>
-                                  <li
-                                    class="list-group-item d-flex justify-content-between align-items-center"
-                                  >
-                                    <span>2. Materi Android Pemula</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                      Lanjutkan&nbsp;
+                                    </router-link>
                                   </li>
                                   <li
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
                                     <span>3. Mekanisme Belajar</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                    <span>Menunggu</span>
                                   </li>
                                   <li
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
                                     <span>4. Forum Diskusi</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                    <span>Menunggu</span>
                                   </li>
                                   <li
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
                                     <span>5. Glosarium</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                    <span>Menunggu</span>
                                   </li>
                                   <li
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
                                     <span>6. Daftar Referensi</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                    <span>Menunggu</span>
                                   </li>
                                 </ul>
                               </div>
@@ -347,10 +376,7 @@
                                     class="list-group-item d-flex justify-content-between align-items-center"
                                   >
                                     <span>Ujian Akhir</span>
-                                    <span
-                                      ><i class="fas fa-check me-3"></i
-                                      >Selesai</span
-                                    >
+                                    <span>Menunggu</span>
                                   </li>
                                 </ul>
                               </div>
@@ -368,7 +394,17 @@
                           Daftar sekarang untuk dapat mengikuti pembelajaran
                         </p>
                         <hr />
-                        <button class="btn btn-primary">MASUK KELAS</button>
+                        <router-link
+                          :to="{
+                            name: 'Course Chapter',
+                            params: {
+                              id: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                              chapter: '413d2ba-4494e2cb5-83e6b3e4a-8b094',
+                            },
+                          }"
+                          class="btn btn-primary"
+                          >MASUK KELAS</router-link
+                        >
                       </div>
                     </div>
                   </div>
