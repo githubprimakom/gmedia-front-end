@@ -157,12 +157,15 @@
                   <i class="fas fa-arrow-left"></i> Kembali
                 </router-link>
                 <button
-                  class="btn btn-success"
+                  class="btn btn-success me-2"
                   type="button"
                   data-bs-toggle="modal"
                   data-bs-target="#tipeSoal"
                 >
                   <i class="fas fa-plus"></i> Buat Soal
+                </button>
+                <button class="btn btn-outline-primary" type="button">
+                  <i class="fas fa-eye"></i> Preview
                 </button>
               </div>
             </div>
