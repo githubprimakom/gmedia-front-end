@@ -163,7 +163,7 @@
         </div>
         <div class="menu-wrapper">
           <div class="menu-name">Menu</div>
-          <router-link :to="{ name: 'Presensi Mahasiswa' }">
+          <!-- <router-link :to="{ name: 'Presensi Mahasiswa' }">
             <div
               :class="
                 `item ${
@@ -218,7 +218,7 @@
               </div>
               <div class="text">Materi</div>
             </div>
-          </router-link>
+          </router-link> -->
 
           <router-link :to="{ name: 'My Course' }">
             <div
@@ -239,7 +239,7 @@
             </div>
           </router-link>
 
-          <div
+          <!-- <div
             :class="
               `item ${
                 link[2] === 'tugas' || link[2] === 'kuis' ? 'collapsed' : ''
@@ -301,7 +301,7 @@
               </div>
               <div class="text">Streaming</div>
             </div>
-          </router-link>
+          </router-link> -->
         </div>
         <div class="menu-wrapper">
           <div class="menu-name">Lainnya</div>
