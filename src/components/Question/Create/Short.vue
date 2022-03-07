@@ -23,6 +23,15 @@
         />
       </div>
       <div class="col-lg-12 mb-2">
+        <label class="form-label">Kunci Jawaban</label>
+        <tags-input
+          element-id="tags"
+          v-model="kuncijawaban"
+          :typeahead="true"
+          :placeholder="'Ketik kunci jawaban'"
+        ></tags-input>
+      </div>
+      <div class="col-lg-12 mb-2">
         <label for="pertanyaan" class="form-label">Pertanyaan</label>
         <VueEditor />
       </div>
@@ -48,15 +57,18 @@
 <script>
 /* eslint-env jquery */
 import { VueEditor } from "vue2-editor";
+import VoerroTagsInput from "@voerro/vue-tagsinput";
 
 export default {
   data: function() {
     return {
       width: null,
+      kuncijawaban: [],
     };
   },
   components: {
     VueEditor,
+    "tags-input": VoerroTagsInput,
   },
   mounted() {
     this.width = $(document).width();
