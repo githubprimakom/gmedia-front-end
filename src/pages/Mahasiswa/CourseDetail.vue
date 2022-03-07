@@ -81,6 +81,21 @@
                       <p class="h6">Tugas</p>
                     </button>
                   </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="forum-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#forum"
+                      type="button"
+                      role="tab"
+                      aria-controls="forum"
+                      aria-selected="false"
+                    >
+                      <i class="fas fa-comments fa-2x"></i>
+                      <p class="h6">Forum</p>
+                    </button>
+                  </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                   <div
@@ -139,7 +154,7 @@
                                       <div class="modal-dialog">
                                         <div class="modal-content">
                                           <div class="modal-body text-start">
-                                            <h5>Masukkan Nama</h5>
+                                            <h6>Masukkan Nama</h6>
                                             <input
                                               type="text"
                                               class="form-control mb-3"
@@ -188,9 +203,42 @@
                                       >Berikan feedback &amp; testimoni
                                       kamu</small
                                     >
+                                    <div
+                                      class="modal fade"
+                                      id="feedback"
+                                      tabindex="-1"
+                                      aria-labelledby="feedbackLabel"
+                                      aria-hidden="true"
+                                    >
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-body text-start">
+                                            <h6>Masukkan Testimoni</h6>
+                                            <textarea
+                                              cols="30"
+                                              rows="3"
+                                              class="form-control mb-3"
+                                            ></textarea>
+                                            <a
+                                              :href="
+                                                $router.resolve({
+                                                  name: 'My Course Detail',
+                                                  params: { id: 1 },
+                                                }).href
+                                              "
+                                              class="btn btn-primary"
+                                            >
+                                              Kirim
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                     <a
-                                      href="https://www.dicoding.com/academies/complete/256"
+                                      href="#"
                                       class="btn btn-primary mb-3"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#feedback"
                                       >Beri Feedback</a
                                     >
                                   </div>
@@ -416,6 +464,16 @@
                   >
                     <div class="alert alert-danger" role="alert">
                       Anda belum melakukan pengumpulan tugas di kelas ini.
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade p-3"
+                    id="forum"
+                    role="tabpanel"
+                    aria-labelledby="forum-tab"
+                  >
+                    <div class="alert alert-danger" role="alert">
+                      Belum ada forum
                     </div>
                   </div>
                 </div>
