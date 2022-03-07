@@ -60,13 +60,15 @@
             <hr />
             <div class="row">
               <div class="col-lg-10">
-                <a
-                  href="https://zoom.us"
+                <router-link
+                  :to="{
+                    name: 'Manage Kursus Topik Lihat Meet',
+                    params: { id: 1, file: 1 },
+                  }"
                   class="text-decoration-none me-3"
-                  target="_blank"
                 >
                   <i class="fas fa-video me-2"></i>Video konferensi pembukaan
-                  sesi</a
+                  sesi</router-link
                 >
               </div>
               <div class="col-lg-2">
@@ -155,12 +157,14 @@
             <hr />
             <div class="row">
               <div class="col-lg-10">
-                <a
-                  href="https://zoom.us"
+                <router-link
+                  :to="{
+                    name: 'Manage Kursus Topik Lihat File',
+                    params: { id: 1, file: 1 },
+                  }"
                   class="text-decoration-none me-3"
-                  target="_blank"
                 >
-                  <i class="fas fa-file me-2"></i>File materi 1</a
+                  <i class="fas fa-file me-2"></i>File materi 1</router-link
                 >
               </div>
               <div class="col-lg-2">

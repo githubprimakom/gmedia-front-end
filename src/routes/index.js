@@ -22,6 +22,7 @@ import ManageKursusUbahTopik from "../pages/Admin/Kursus/Manage/EditTopic.vue";
 // File
 import ManageKursusTopikBuatFile from "../pages/Admin/Kursus/Manage/Activity/File/Create.vue";
 import ManageKursusTopikUbahFile from "../pages/Admin/Kursus/Manage/Activity/File/Edit.vue";
+import ManageKursusTopikLihatFile from "../pages/Admin/Kursus/Manage/Activity/File/Show.vue";
 // Forum
 import ManageKursusTopikBuatForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Create.vue";
 import ManageKursusTopikUbahForum from "../pages/Admin/Kursus/Manage/Activity/Forum/Edit.vue";
@@ -30,6 +31,7 @@ import ManageKursusTopikDiskusiForum from "../pages/Admin/Kursus/Manage/Activity
 // Meet
 import ManageKursusTopikBuatMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Create.vue";
 import ManageKursusTopikUbahMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Edit.vue";
+import ManageKursusTopikLihatMeet from "../pages/Admin/Kursus/Manage/Activity/Meet/Show.vue";
 // Task
 import ManageKursusTopikBuatTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Create.vue";
 import ManageKursusTopikUbahTugas from "../pages/Admin/Kursus/Manage/Activity/Task/Edit.vue";
@@ -185,6 +187,11 @@ const routes = [
     name: "Manage Kursus Topik Ubah File",
     component: ManageKursusTopikUbahFile,
   },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-file/:file",
+    name: "Manage Kursus Topik Lihat File",
+    component: ManageKursusTopikLihatFile,
+  },
   // Forum
   {
     path: "/admin/kursus/manage/:id/topik/:topic/buat-forum",
@@ -217,6 +224,11 @@ const routes = [
     path: "/admin/kursus/manage/:id/topik/:topic/ubah-meet/:meet",
     name: "Manage Kursus Topik Ubah Meet",
     component: ManageKursusTopikUbahMeet,
+  },
+  {
+    path: "/admin/kursus/manage/:id/topik/:topic/lihat-meet/:meet",
+    name: "Manage Kursus Topik Lihat Meet",
+    component: ManageKursusTopikLihatMeet,
   },
   // Task
   {
