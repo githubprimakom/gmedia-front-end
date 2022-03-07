@@ -129,9 +129,41 @@
                                       >Cetak sertifikat kamu sekarang
                                       juga</small
                                     >
+                                    <div
+                                      class="modal fade"
+                                      id="sertifikatModal"
+                                      tabindex="-1"
+                                      aria-labelledby="sertifikatModalLabel"
+                                      aria-hidden="true"
+                                    >
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-body text-start">
+                                            <h5>Masukkan Nama</h5>
+                                            <input
+                                              type="text"
+                                              class="form-control mb-3"
+                                            />
+                                            <a
+                                              :href="
+                                                $router.resolve({
+                                                  name: 'Sertifikat',
+                                                  params: { id: 1 },
+                                                }).href
+                                              "
+                                              class="btn btn-primary"
+                                            >
+                                              Generate
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                     <a
-                                      href="https://www.dicoding.com/academies/256/certificates/418774"
+                                      href="#"
                                       class="btn btn-primary mb-3"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#sertifikatModal"
                                     >
                                       Lihat Sertifikat
                                     </a>

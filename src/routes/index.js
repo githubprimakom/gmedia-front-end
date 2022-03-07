@@ -108,6 +108,7 @@ import DetailMateriMahasiswa from "../pages/Mahasiswa/DetailMateri.vue";
 import MyCourse from "../pages/Mahasiswa/Course.vue";
 import MyCourseDetail from "../pages/Mahasiswa/CourseDetail.vue";
 import CourseChapter from "../pages/Mahasiswa/CourseChapter.vue";
+import Sertifikat from "../pages/Mahasiswa/Sertifikat.vue";
 
 Vue.use(VueRouter);
 
@@ -588,6 +589,11 @@ const routes = [
     path: "/dashboard/course/:id/:chapter",
     name: "Course Chapter",
     component: CourseChapter,
+  },
+  {
+    path: "/dashboard/generate-sertifikat",
+    name: "Sertifikat",
+    component: Sertifikat,
   },
 ];
 
