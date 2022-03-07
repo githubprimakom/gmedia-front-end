@@ -81,6 +81,21 @@
                       <p class="h6">Tugas</p>
                     </button>
                   </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="forum-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#forum"
+                      type="button"
+                      role="tab"
+                      aria-controls="forum"
+                      aria-selected="false"
+                    >
+                      <i class="fas fa-comments fa-2x"></i>
+                      <p class="h6">Forum</p>
+                    </button>
+                  </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                   <div
@@ -449,6 +464,16 @@
                   >
                     <div class="alert alert-danger" role="alert">
                       Anda belum melakukan pengumpulan tugas di kelas ini.
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade p-3"
+                    id="forum"
+                    role="tabpanel"
+                    aria-labelledby="forum-tab"
+                  >
+                    <div class="alert alert-danger" role="alert">
+                      Belum ada forum
                     </div>
                   </div>
                 </div>
