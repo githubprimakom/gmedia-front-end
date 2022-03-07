@@ -107,7 +107,9 @@
                       </div>
                       <div class="row">
                         <div class="col-lg-4">
-                          <button class="btn btn-primary">Simpan</button>
+                          <button class="btn btn-primary" @click="submit">
+                            Simpan
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -342,7 +344,9 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-4">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary" @click="submit">
+                      Simpan
+                    </button>
                   </div>
                 </div>
               </div>
@@ -369,7 +373,9 @@
                 </p>
                 <div class="row">
                   <div class="col-lg-4">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary" @click="submit">
+                      Simpan
+                    </button>
                   </div>
                 </div>
               </div>
@@ -402,6 +408,9 @@ export default {
     hapusPeserta: function(peserta) {
       this.pesertaDipilih.splice(this.pesertaDipilih.indexOf(peserta), 1);
       this.peserta.push(peserta);
+    },
+    submit: function() {
+      window.location.reload();
     },
   },
   mounted() {

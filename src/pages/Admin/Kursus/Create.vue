@@ -117,9 +117,15 @@
                       </div>
                     </div>
                     <div class="col-lg-12">
-                      <button type="submit" class="btn btn-primary">
+                      <router-link
+                        :to="{ name: 'Manage Kursus Index', params: { id: 1 } }"
+                        class="btn btn-primary"
+                      >
                         Simpan
-                      </button>
+                      </router-link>
+                      <!-- <button type="submit" class="btn btn-primary">
+                        Simpan
+                      </button> -->
                     </div>
                   </div>
                 </form>

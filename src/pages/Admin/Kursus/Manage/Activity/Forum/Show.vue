@@ -157,7 +157,9 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-4">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary" @click="submit">
+                      Simpan
+                    </button>
                   </div>
                 </div>
               </div>
@@ -192,7 +194,9 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-4">
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-primary" @click="submit">
+                      Simpan
+                    </button>
                   </div>
                 </div>
               </div>
@@ -216,7 +220,9 @@
                 <p>Hapus semua komentar yang ada didalam diskusi?</p>
                 <div class="row">
                   <div class="col-lg-4">
-                    <button class="btn btn-danger">Hapus</button>
+                    <button class="btn btn-danger" @click="submit">
+                      Hapus
+                    </button>
                   </div>
                 </div>
               </div>
@@ -244,6 +250,11 @@ export default {
   components: {
     VueEditor,
     NavbarManageKursus,
+  },
+  methods: {
+    submit: function() {
+      window.location.reload();
+    },
   },
   mounted() {
     this.width = $(document).width();

@@ -100,9 +100,19 @@
       </div>
       <div class="col-lg-12">
         <hr />
-        <button type="submit" class="btn btn-primary">
+        <router-link
+          :to="{
+            name: 'Manage Kursus Tugas Soal',
+            params: { id: 1, topic: 2, task: 1 },
+          }"
+          type="submit"
+          class="btn btn-primary"
+        >
           Simpan
-        </button>
+        </router-link>
+        <!-- <button type="submit" class="btn btn-primary">
+          Simpan
+        </button> -->
       </div>
     </div>
   </form>
