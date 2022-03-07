@@ -63,9 +63,18 @@
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <button type="submit" class="btn btn-primary me-2">
+                  <router-link
+                    :to="{
+                      name: 'Manage Kursus Lihat Topik',
+                      params: { id: 1, topic: 1 },
+                    }"
+                    class="btn btn-primary me-2"
+                  >
                     Simpan
-                  </button>
+                  </router-link>
+                  <!-- <button type="submit" class="btn btn-primary me-2">
+                    Simpan
+                  </button> -->
                   <router-link
                     :to="{
                       name: 'Manage Kursus Lihat Topik',
