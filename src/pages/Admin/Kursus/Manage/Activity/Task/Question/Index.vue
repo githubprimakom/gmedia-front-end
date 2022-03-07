@@ -164,9 +164,20 @@
                 >
                   <i class="fas fa-plus"></i> Buat Soal
                 </button>
-                <button class="btn btn-outline-primary" type="button">
+                <router-link
+                  :to="{
+                    name: 'Manage Kursus Tugas Preview',
+                    params: {
+                      id: $route.params.id,
+                      topic: $route.params.topic,
+                      task: $route.params.task,
+                    },
+                  }"
+                  class="btn btn-outline-primary"
+                  type="button"
+                >
                   <i class="fas fa-eye"></i> Preview
-                </button>
+                </router-link>
               </div>
             </div>
           </div>
