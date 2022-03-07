@@ -39,7 +39,7 @@
         </div>
         <div class="menu-wrapper">
           <div class="menu-name">Menu</div>
-          <router-link :to="{ name: 'Fakultas Master' }">
+          <!-- <router-link :to="{ name: 'Fakultas Master' }">
             <div
               :class="
                 `item ${
@@ -139,7 +139,7 @@
               </div>
               <div class="text">Materi</div>
             </div>
-          </router-link>
+          </router-link> -->
 
           <router-link :to="{ name: 'Kursus Master' }">
             <div
@@ -160,7 +160,7 @@
             </div>
           </router-link>
 
-          <div
+          <!-- <div
             :class="
               `item ${
                 link[2] == 'order' ? 'active' : ''
@@ -226,9 +226,9 @@
                 <div class="text">Penilaian</div>
               </div>
             </router-link>
-          </div>
+          </div> -->
 
-          <router-link :to="{ name: 'Kegiatan Master' }">
+          <!-- <router-link :to="{ name: 'Kegiatan Master' }">
             <div
               :class="
                 `item ${
@@ -263,14 +263,10 @@
               </div>
               <div class="text">Streaming</div>
             </div>
-          </router-link>
+          </router-link> -->
 
           <div
-            :class="
-              `item ${
-                link[2] == 'order' ? 'active' : ''
-              } d-flex align-items-center`
-            "
+            :class="`item d-flex align-items-center`"
             data-bs-toggle="collapse"
             data-bs-target="#konten"
             aria-expanded="false"
@@ -285,7 +281,10 @@
             </div>
             <div class="text">Kontent & Informasi</div>
           </div>
-          <div class="collapse show" id="konten">
+          <div
+            :class="`collapse ${link[2] == 'konten' ? 'show' : ''}`"
+            id="konten"
+          >
             <router-link :to="{ name: 'Kontent Logo Master' }">
               <div
                 :class="
@@ -377,7 +376,7 @@
               </div>
             </router-link>
           </div>
-          <router-link :to="{ name: 'Superadmin Management' }">
+          <!-- <router-link :to="{ name: 'Superadmin Management' }">
             <div
               :class="
                 `item ${
@@ -417,7 +416,7 @@
               </div>
               <div class="text">Data Presensi</div>
             </div>
-          </router-link>
+          </router-link> -->
         </div>
         <div class="menu-wrapper">
           <div class="menu-name">Lainnya</div>
