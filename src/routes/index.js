@@ -109,6 +109,7 @@ import MyCourse from "../pages/Mahasiswa/Course.vue";
 import MyCourseDetail from "../pages/Mahasiswa/CourseDetail.vue";
 import CourseChapter from "../pages/Mahasiswa/CourseChapter.vue";
 import Sertifikat from "../pages/Mahasiswa/Sertifikat.vue";
+import Discuss from "../pages/Mahasiswa/Discuss.vue";
 
 Vue.use(VueRouter);
 
@@ -594,6 +595,11 @@ const routes = [
     path: "/dashboard/generate-sertifikat",
     name: "Sertifikat",
     component: Sertifikat,
+  },
+  {
+    path: "/dashboard/course/:id/:discuss",
+    name: "Discuss",
+    component: Discuss,
   },
 ];
 
