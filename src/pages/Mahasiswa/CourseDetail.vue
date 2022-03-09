@@ -472,8 +472,111 @@
                     role="tabpanel"
                     aria-labelledby="forum-tab"
                   >
-                    <div class="alert alert-danger" role="alert">
-                      Belum ada forum
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="mb-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="search"
+                                placeholder="Masukkan topik diskusi"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+                            <select
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected value="1">Terbaru</option>
+                              <option value="2">Terlama</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-2">
+                            <button class="btn btn-primary">
+                              <i class="fas fa-search"></i> Filter
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mb-2">
+                          <router-link
+                            :to="{
+                              name: 'Discuss',
+                              params: {
+                                id: $route.params.id,
+                                discuss: 1,
+                              },
+                            }"
+                            class="text-dark"
+                          >
+                            <div class="col-lg-12 card-diskusi">
+                              <div class="card bg-light border-0" id="parent-1">
+                                <div class="card-body">
+                                  <h5 class="card-subtitle fw-bold mb-2">
+                                    Bahasa pemrograman Backend
+                                  </h5>
+                                  <p class="card-text">
+                                    Some quick example text to build on the card
+                                    title and make up the bulk of the card's
+                                    content...
+                                  </p>
+                                  <i class="fas fa-user me-1"></i> Aditya
+                                  <i class="fas fa-book ms-2 me-1"></i> Forum
+                                  diskusi
+                                  <i class="fas fa-clock ms-2 me-1"></i> 1 hari
+                                  yang lalu
+                                  <i class="fas fa-comments ms-2 me-1"></i> 49
+                                  balasan
+                                </div>
+                              </div>
+                            </div>
+                          </router-link>
+                        </div>
+                        <div class="row mb-2">
+                          <router-link
+                            :to="{
+                              name: 'Discuss',
+                              params: {
+                                id: $route.params.id,
+                                discuss: 1,
+                              },
+                            }"
+                            class="text-dark"
+                          >
+                            <div class="col-lg-12 card-diskusi">
+                              <div class="card bg-light border-0" id="parent-1">
+                                <div class="card-body">
+                                  <h5 class="card-subtitle fw-bold mb-2">
+                                    PHP basic
+                                  </h5>
+                                  <p class="card-text">
+                                    Some quick example text to build on the card
+                                    title and make up the bulk of the card's
+                                    content...
+                                  </p>
+                                  <i class="fas fa-user me-1"></i> Ricki
+                                  <i class="fas fa-book ms-2 me-1"></i> Forum
+                                  diskusi
+                                  <i class="fas fa-clock ms-2 me-1"></i> 12 hari
+                                  yang lalu
+                                  <i class="fas fa-comments ms-2 me-1"></i> 90
+                                  balasan
+                                </div>
+                              </div>
+                            </div>
+                          </router-link>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="alert alert-success" role="alert">
+                          <h5>Diskusi Kelas</h5>
+                          Fitur diskusi ini bertujuan untuk mempermudah siswa
+                          dalam memahami materi akademi. Kamu dapat bertanya dan
+                          menjawab hal teknis terkait materi Kelas ini.
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -504,3 +607,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.card-diskusi:hover {
+  border: 1px solid #9de6f8;
+  border-radius: 5px;
+}
+</style>
